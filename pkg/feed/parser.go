@@ -15,8 +15,13 @@ type AtomFeed struct {
 type AtomEntry struct {
 	ID      string `xml:"id"`
 	Title   string `xml:"title"`
-	Link    string `xml:"link"`
+	Link    Link   `xml:"link"`
 	Content []byte `xml:"content"`
+}
+
+type Link struct {
+	XMLName xml.Name `xml:"link"`
+	HRef    string   `xml:"href,attr"`
 }
 
 func ParseAtom(feedID uint, body []byte) []*model.Entry {
@@ -32,7 +37,7 @@ func ParseAtom(feedID uint, body []byte) []*model.Entry {
 		entries = append(entries, &model.Entry{
 			FeedID:  feedID,
 			EntryID: entry.ID,
-			Link:    entry.Link,
+			Link:    entry.Link.HRef,
 			Title:   entry.Title,
 			Content: text,
 		})

@@ -1,11 +1,12 @@
 package feed
 
 import (
+	"log"
+	"time"
+
 	"gitea.code-infection.com/efertone/kiki/pkg/database"
 	"gitea.code-infection.com/efertone/kiki/pkg/model"
 )
-
-import "log"
 
 func AllFor(acc *model.Account) []*model.Feed {
 	db := database.NewDatabase()
@@ -22,7 +23,11 @@ func NextPendingEntries(feed *model.Feed) *model.Entry {
 	defer db.Close()
 
 	var entry model.Entry
-	db.Connection().Where(&model.Entry{FeedID: feed.ID, PostedAt: nil}).First(&entry)
+	db.Connection().Where("feed_id = ? and posted_at is null", feed.ID).First(&entry)
+
+	if entry.ID == 0 {
+		return nil
+	}
 
 	return &entry
 }
@@ -48,7 +53,7 @@ func Add(name, user, url string) {
 		log.Fatalln("User does not exist")
 	}
 
-	db.Connection().Create(&model.Feed{Name: name, User: user, URL: url});
+	db.Connection().Create(&model.Feed{Name: name, User: user, URL: url})
 }
 
 func Get(feed *model.Feed) {
@@ -61,7 +66,8 @@ func Get(feed *model.Feed) {
 	db := database.NewDatabase()
 	defer db.Close()
 
-	for _, entry := range entries {
+	for i := len(entries) - 1; i >= 0; i-- {
+		entry := entries[i]
 		var count int
 		db.Connection().
 			Model(&model.Entry{}).
@@ -75,5 +81,10 @@ func Get(feed *model.Feed) {
 	}
 }
 
-func init() {}
-
+func MarAsPosted(entry *model.Entry) {
+	now := time.Now()
+	entry.PostedAt = &now
+	db := database.NewDatabase()
+	defer db.Close()
+	db.Connection().Save(entry)
+}

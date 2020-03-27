@@ -11,7 +11,7 @@ import (
 
 var (
 	configFile string
-	rootCmd = &cobra.Command{
+	rootCmd    = &cobra.Command{
 		Use:   "kiki",
 		Short: "RSS Delivery Service",
 		Long:  "Deliver RSS items on Misskey",
@@ -28,7 +28,7 @@ func init() {
 		"config file (default is $HOME/.config/kiki/config.yaml)")
 
 	viper.BindPFlag("debug", rootCmd.PersistentFlags().Lookup("debug"))
-	
+
 	rootCmd.AddCommand(command.VersionCmd)
 	rootCmd.AddCommand(command.AddAccountCmd)
 	rootCmd.AddCommand(command.AddFeedCmd)
@@ -45,9 +45,9 @@ func initConfig() {
 		viper.AddConfigPath("$HOME/.config/kiki")
 		viper.AddConfigPath(".")
 	}
-	
+
 	viper.AutomaticEnv()
-	
+
 	err := viper.ReadInConfig()
 	if err != nil {
 		log.Fatalf("Fatal error config file: %s\n", err)
@@ -62,11 +62,11 @@ func initConfig() {
 
 func boot() {
 	database.Configure(&database.ConnectionDetails{
-		User: viper.GetString("database.user"),
+		User:     viper.GetString("database.user"),
 		Password: viper.GetString("database.password"),
-		Name: viper.GetString("database.name"),
-		Host: viper.GetString("database.host"),
-		Port: viper.GetInt("database.port"),
+		Name:     viper.GetString("database.name"),
+		Host:     viper.GetString("database.host"),
+		Port:     viper.GetInt("database.port"),
 	})
 	database.NewDatabase().Migrate()
 }
