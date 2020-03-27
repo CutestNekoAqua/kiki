@@ -1,0 +1,7 @@
+---
+database:
+  user: kiki
+  name: kiki
+  password: kiki
+  host: localhost
+  port: 31932
