@@ -29,7 +29,7 @@ func (c Client) sendRequest(request *BaseRequest) bool {
 
 	req, err := http.NewRequest("POST", c.url(request.Path), bytes.NewBuffer(requestBody))
 	if err != nil {
-		log.Printf("[Misskey] Error reading request. ", err)
+		log.Printf("[Misskey] Error reading request: %s\n", err)
 		return false
 	}
 	req.Header.Set("Content-Type", "application/json")
@@ -38,14 +38,14 @@ func (c Client) sendRequest(request *BaseRequest) bool {
 	resp, err := client.Do(req)
 
 	if err != nil {
-		log.Printf("[Misskey] Error reading response. ", err)
+		log.Printf("[Misskey] Error reading response: %s\n", err)
 		return false
 	}
 
 	defer resp.Body.Close()
 	body, err := ioutil.ReadAll(resp.Body)
 	if err != nil {
-		log.Printf("[Misskey] Error reading body. ", err)
+		log.Printf("[Misskey] Error reading body: %s\n", err)
 		return false
 	}
 
