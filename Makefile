@@ -2,8 +2,9 @@
 export GOPROXY ?= https://proxy.golang.org
 export GOSUMDB ?= sum.golang.org
 
-GIT_COMMIT  = $(shell git rev-list -1 HEAD)
-GIT_VERSION = $(shell git describe --always --abbrev=7 --dirty)
+GIT_COMMIT       = $(shell git rev-list -1 HEAD)
+GIT_VERSION      = $(shell git describe --always --abbrev=7 --dirty)
+GIT_TAG          = $(shell git tag -l --points-at HEAD)
 
 CGO         ?= 0
 BINARIES    ?= kiki
@@ -58,6 +59,11 @@ export BINARY_EXT ?= $(BINARY_EXT_LOCAL)
 
 OUT_DIR := ./dist
 BASE_PACKAGE_NAME := gitea.code-infection.com/efertone/kiki
+
+DEFAULT_LDFLAGS:=\
+  -X gitea.code-infection.com/efertone/kiki/pkg/version.Build=$(GIT_VERSION) \
+  -X gitea.code-infection.com/efertone/kiki/pkg/version.Tag=$(GIT_TAG) \
+
 
 ifeq ($(origin DEBUG), undefined)
   BUILDTYPE_DIR:=release
