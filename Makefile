@@ -4,7 +4,6 @@ export GOSUMDB ?= sum.golang.org
 
 GIT_COMMIT       = $(shell git rev-list -1 HEAD)
 GIT_VERSION      = $(shell git describe --always --abbrev=7 --dirty)
-GIT_TAG          = $(shell git tag -l --points-at HEAD)
 
 CGO         ?= 0
 BINARIES    ?= kiki
@@ -61,8 +60,7 @@ OUT_DIR := ./dist
 BASE_PACKAGE_NAME := gitea.code-infection.com/efertone/kiki
 
 DEFAULT_LDFLAGS:=\
-  -X gitea.code-infection.com/efertone/kiki/pkg/version.Build=$(GIT_VERSION) \
-  -X gitea.code-infection.com/efertone/kiki/pkg/version.Tag=$(GIT_TAG) \
+  -X gitea.code-infection.com/efertone/kiki/pkg/version.Build=$(GIT_VERSION)
 
 
 ifeq ($(origin DEBUG), undefined)
@@ -103,17 +101,17 @@ $(foreach ITEM,$(BINARIES),$(eval $(call genBinariesForTarget,$(ITEM),./cmd/$(IT
 endif
 
 ARCHIVE_OUT_DIR ?= $(DAPR_OUT_DIR)
-ARCHIVE_FILE_EXTS:=$(foreach ITEM,$(BINARIES),archive-$(ITEM)$(ARCHIVE_EXT))
+ARCHIVE_FILE_EXTS:=$(foreach ITEM,$(BINARIES),archive-$(ITEM)_$(GIT_VERSION)$(ARCHIVE_EXT))
 
 archive: $(ARCHIVE_FILE_EXTS)
 
 define genArchiveBinary
 ifeq ($(GOOS),windows)
-archive-$(1).zip:
-	7z.exe a -tzip "$(2)\\$(1)_$(GOOS)_$(GOARCH)$(ARCHIVE_EXT)" "$(DAPR_OUT_DIR)\\$(1)$(BINARY_EXT)"
+archive-$(1)_$(GIT_VERSION).zip:
+	7z.exe a -tzip "$(2)\\$(1)_$(GIT_VERSION)_$(GOOS)_$(GOARCH)$(ARCHIVE_EXT)" "$(DAPR_OUT_DIR)\\$(1)$(BINARY_EXT)"
 else
-archive-$(1).tar.gz:
-	tar czf "$(2)/$(1)_$(GOOS)_$(GOARCH)$(ARCHIVE_EXT)" -C "$(DAPR_OUT_DIR)" "$(1)$(BINARY_EXT)"
+archive-$(1)_$(GIT_VERSION).tar.gz:
+	tar czf "$(2)/$(1)_$(GIT_VERSION)_$(GOOS)_$(GOARCH)$(ARCHIVE_EXT)" -C "$(DAPR_OUT_DIR)" "$(1)$(BINARY_EXT)"
 endif
 endef
 
