@@ -3,19 +3,17 @@ package feed
 import (
 	"encoding/xml"
 	"errors"
+	"fmt"
 	"io/ioutil"
 	"net/http"
+	"strings"
 
 	"gitea.code-infection.com/efertone/kiki/pkg/model"
 )
 
-const (
-	AtomXMLNS = "http://www.w3.org/2005/Atom"
-)
-
 type FeedHeader struct {
-	XMLName xml.Name `xml:"feed"`
-	XMLNS   string   `xml:"xmlns,attr"`
+	XMLName xml.Name
+	XMLNS   string `xml:"xmlns,attr"`
 }
 
 func Download(feed *model.Feed) ([]*model.Entry, error) {
@@ -34,9 +32,14 @@ func Download(feed *model.Feed) ([]*model.Entry, error) {
 	var feedHeader FeedHeader
 	xml.Unmarshal(body, &feedHeader)
 
-	if feedHeader.XMLNS == AtomXMLNS {
+	switch strings.ToLower(feedHeader.XMLName.Local) {
+	case "feed":
 		return ParseAtom(feed.ID, body), nil
+	case "rss":
+		return ParseRSS(feed.ID, body), nil
+	case "rdf":
+		return ParseRDF(feed.ID, body), nil
 	}
 
-	return nil, errors.New("Unknown feed type")
+	return nil, errors.New(fmt.Sprintf("Unknown feed type: %s", feedHeader.XMLName.Local))
 }
