@@ -15,3 +15,14 @@ var AddFeedCmd = &cobra.Command{
 		feed.Add(name, user, url)
 	},
 }
+
+func init() {
+	AddFeedCmd.Flags().String("name", "", "Feed name (required)")
+	AddFeedCmd.MarkFlagRequired("name")
+
+	AddFeedCmd.Flags().String("user", "", "Name of the user (required)")
+	AddFeedCmd.MarkFlagRequired("user")
+
+	AddFeedCmd.Flags().String("url", "", "Feed URL (required)")
+	AddFeedCmd.MarkFlagRequired("url")
+}

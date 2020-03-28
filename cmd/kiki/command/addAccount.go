@@ -14,3 +14,11 @@ var AddAccountCmd = &cobra.Command{
 		account.Add(name, token)
 	},
 }
+
+func init() {
+	AddAccountCmd.Flags().String("name", "", "Account name (required)")
+	AddAccountCmd.MarkFlagRequired("name")
+
+	AddAccountCmd.Flags().String("api-token", "", "API Token (required)")
+	AddAccountCmd.MarkFlagRequired("api-token")
+}

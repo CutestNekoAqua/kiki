@@ -1,6 +1,8 @@
 package command
 
 import (
+	"fmt"
+
 	"gitea.code-infection.com/efertone/kiki/pkg/account"
 	"gitea.code-infection.com/efertone/kiki/pkg/feed"
 	"gitea.code-infection.com/efertone/kiki/pkg/misskey"
@@ -19,7 +21,7 @@ var SendCmd = &cobra.Command{
 				if next == nil {
 					continue
 				}
-				if mkClient.CreateNote(next.Excerpt()) {
+				if mkClient.CreateNote(fmt.Sprintf("**%s**\n\n%s\n\n%s", next.Title, next.Excerpt(), next.Link)) {
 					feed.MarAsPosted(next)
 				}
 			}

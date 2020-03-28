@@ -18,12 +18,16 @@ type Entry struct {
 }
 
 func (e Entry) Excerpt() string {
-	if len(e.Content) < 300 {
+	if len(e.Content) < 500 {
 		return e.Content
 	}
-	index := strings.Index(e.Content, "\n\n")
-	if index < 0 {
-		index = strings.IndexAny(e.Content, ".!?")
+
+	var index int
+	index = strings.Index(e.Content[:500], "----")
+	if index < 50 {
+		index = strings.LastIndexAny(e.Content[:500], ".!?")
 	}
-	return e.Content[:index+1]
+	content := e.Content[:index+1]
+	content = strings.Trim(content, "\n \r-")
+	return content
 }

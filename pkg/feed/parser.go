@@ -31,6 +31,7 @@ func ParseAtom(feedID uint, body []byte) []*model.Entry {
 	var entries []*model.Entry = make([]*model.Entry, 0)
 	for _, entry := range atom.Entries {
 		text, _ := html2text.FromString(string(entry.Content), html2text.Options{
+			OmitLinks:    true,
 			PrettyTables: false,
 		})
 

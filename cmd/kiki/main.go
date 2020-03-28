@@ -33,6 +33,7 @@ func init() {
 	rootCmd.AddCommand(command.AddAccountCmd)
 	rootCmd.AddCommand(command.AddFeedCmd)
 	rootCmd.AddCommand(command.FetchCmd)
+	rootCmd.AddCommand(command.PreviewCmd)
 	rootCmd.AddCommand(command.SendCmd)
 }
 
