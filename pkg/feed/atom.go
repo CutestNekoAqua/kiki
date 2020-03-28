@@ -42,7 +42,7 @@ func ParseAtom(feedID uint, body []byte) []*model.Entry {
 		entries = append(entries, &model.Entry{
 			FeedID:  feedID,
 			EntryID: entry.ID,
-			Link:    entry.Link.HRef,
+			Link:    RemoveTrackers(entry.Link.HRef),
 			Title:   title,
 			Content: text,
 		})

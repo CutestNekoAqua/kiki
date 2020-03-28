@@ -48,7 +48,7 @@ func ParseRDF(feedID uint, body []byte) []*model.Entry {
 		entries = append(entries, &model.Entry{
 			FeedID:  feedID,
 			EntryID: entry.ID,
-			Link:    entry.Link,
+			Link:    RemoveTrackers(entry.Link),
 			Title:   title,
 			Content: text,
 		})

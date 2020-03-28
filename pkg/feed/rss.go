@@ -2,7 +2,6 @@ package feed
 
 import (
 	"encoding/xml"
-	"log"
 
 	"gitea.code-infection.com/efertone/kiki/pkg/model"
 	"jaytaylor.com/html2text"
@@ -43,12 +42,10 @@ func ParseRSS(feedID uint, body []byte) []*model.Entry {
 			PrettyTables: false,
 		})
 
-		log.Fatalln(RemoveTrackers(entry.Link))
-
 		entries = append(entries, &model.Entry{
 			FeedID:  feedID,
 			EntryID: entry.ID,
-			Link:    entry.Link,
+			Link:    RemoveTrackers(entry.Link),
 			Title:   title,
 			Content: text,
 		})
