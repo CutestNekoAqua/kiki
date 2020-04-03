@@ -7,6 +7,7 @@ steps:
 - name: lint
   image: golang:1.14
   commands:
+  - go get -u golang.org/x/lint/golint
   - golint ./...
 - name: vet
   image: golang:1.14
