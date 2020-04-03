@@ -1,9 +1,11 @@
 package database
 
-import "fmt"
+import (
+	"fmt"
+	"strings"
+)
 
-import "strings"
-
+// ConnectionDetails contains all the information about a Database Connection
 type ConnectionDetails struct {
 	User     string
 	Name     string
@@ -12,8 +14,9 @@ type ConnectionDetails struct {
 	Port     int
 }
 
+// Configure bootstraps a Database Connection
 func Configure(details *ConnectionDetails) {
-	var build []string = make([]string, 0)
+	var build = make([]string, 0)
 
 	if details.User != "" {
 		build = append(build, fmt.Sprintf("user=%s", details.User))

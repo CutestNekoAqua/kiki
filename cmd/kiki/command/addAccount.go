@@ -5,6 +5,7 @@ import (
 	"github.com/spf13/cobra"
 )
 
+// AddAccountCmd command
 var AddAccountCmd = &cobra.Command{
 	Use:   "add-account",
 	Short: "Add Misskey user",

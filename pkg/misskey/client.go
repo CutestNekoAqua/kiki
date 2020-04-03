@@ -10,11 +10,13 @@ import (
 	"time"
 )
 
+// Client is the main Misskey client struct
 type Client struct {
 	BaseURL string
 	Token   string
 }
 
+// NewClient creates a new Misskey Client
 func NewClient(baseURL, token string) *Client {
 	return &Client{Token: token, BaseURL: baseURL}
 }
@@ -72,6 +74,7 @@ func (c Client) sendRequest(request *BaseRequest) bool {
 	return false
 }
 
+// CreateNote sends a request to the Misskey server to create a note
 func (c *Client) CreateNote(content string) bool {
 	request := &NoteCreateRequest{
 		Visibility: "public",

@@ -5,6 +5,7 @@ import (
 	"github.com/spf13/cobra"
 )
 
+// AddFeedCmd command
 var AddFeedCmd = &cobra.Command{
 	Use:   "add-feed",
 	Short: "Add Feed to a Misskey user",

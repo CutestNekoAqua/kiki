@@ -1,5 +1,6 @@
 package misskey
 
+// NoteCreateRequest represents a CreateNote request
 type NoteCreateRequest struct {
 	*BaseRequest
 	Visibility        string   `json:"visibility"`
