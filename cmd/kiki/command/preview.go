@@ -10,6 +10,7 @@ import (
 	"github.com/spf13/cobra"
 )
 
+// PreviewCmd command
 var PreviewCmd = &cobra.Command{
 	Use:   "preview",
 	Short: "Preview desired content",
@@ -22,6 +23,7 @@ func init() {
 	PreviewFetchCmd.MarkFlagRequired("url")
 }
 
+// PreviewFetchCmd : PreviewCmd -> Fetch command
 var PreviewFetchCmd = &cobra.Command{
 	Use:   "fetch",
 	Short: "Preview fetch",

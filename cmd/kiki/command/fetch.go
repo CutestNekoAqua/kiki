@@ -5,6 +5,7 @@ import (
 	"github.com/spf13/cobra"
 )
 
+// FetchCmd command
 var FetchCmd = &cobra.Command{
 	Use:   "fetch",
 	Short: "Fetch all Feed contents",

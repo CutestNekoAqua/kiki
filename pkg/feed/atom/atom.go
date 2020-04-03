@@ -1,31 +1,36 @@
-package feed
+package atom
 
 import (
 	"encoding/xml"
 
+	"gitea.code-infection.com/efertone/kiki/pkg/feed/cleaner"
 	"gitea.code-infection.com/efertone/kiki/pkg/model"
 	"jaytaylor.com/html2text"
 )
 
-type AtomFeed struct {
-	XMLName xml.Name    `xml:"feed"`
-	Entries []AtomEntry `xml:"entry"`
+// Feed is the root wrapper
+type Feed struct {
+	XMLName xml.Name `xml:"feed"`
+	Entries []Entry  `xml:"entry"`
 }
 
-type AtomEntry struct {
+// Entry represents one entry
+type Entry struct {
 	ID      string `xml:"id"`
 	Title   string `xml:"title"`
 	Link    Link   `xml:"link"`
 	Content []byte `xml:"content"`
 }
 
+// Link represents a <link>
 type Link struct {
 	XMLName xml.Name `xml:"link"`
 	HRef    string   `xml:"href,attr"`
 }
 
-func ParseAtom(feedID uint, body []byte) []*model.Entry {
-	var atom AtomFeed
+// Parse parses the feed
+func Parse(feedID uint, body []byte) []*model.Entry {
+	var atom Feed
 	xml.Unmarshal(body, &atom)
 
 	var entries []*model.Entry = make([]*model.Entry, 0)
@@ -42,7 +47,7 @@ func ParseAtom(feedID uint, body []byte) []*model.Entry {
 		entries = append(entries, &model.Entry{
 			FeedID:  feedID,
 			EntryID: entry.ID,
-			Link:    RemoveTrackers(entry.Link.HRef),
+			Link:    cleaner.RemoveTrackers(entry.Link.HRef),
 			Title:   title,
 			Content: text,
 		})

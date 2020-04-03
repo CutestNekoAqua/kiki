@@ -1,0 +1,19 @@
+---
+kind: pipeline
+type: kubernetes
+name: default
+
+steps:
+- name: lint
+  image: golang:1.14
+  commands:
+  - go get -u golang.org/x/lint/golint
+  - golint ./...
+- name: vet
+  image: golang:1.14
+  commands:
+  - go vet ./...
+- name: test
+  image: golang:1.14
+  commands:
+  - go test ./...

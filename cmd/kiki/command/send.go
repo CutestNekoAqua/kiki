@@ -10,6 +10,7 @@ import (
 	"github.com/spf13/viper"
 )
 
+// SendCmd command
 var SendCmd = &cobra.Command{
 	Use:   "send",
 	Short: "Send new entries to Misskey",

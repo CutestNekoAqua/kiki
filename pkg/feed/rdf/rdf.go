@@ -1,15 +1,17 @@
-package feed
+package rdf
 
 import (
 	"encoding/xml"
 
+	"gitea.code-infection.com/efertone/kiki/pkg/feed/cleaner"
 	"gitea.code-infection.com/efertone/kiki/pkg/model"
 	"jaytaylor.com/html2text"
 )
 
-type RDFFeed struct {
+// Feed is the root wrapper
+type Feed struct {
 	XMLName xml.Name
-	Items   []RDFItem `xml:"item"`
+	Items   []Item `xml:"item"`
 	Channel struct {
 		Title       string `xml:"title"`
 		Link        string `xml:"link"`
@@ -18,19 +20,22 @@ type RDFFeed struct {
 	} `xml:"channel"`
 }
 
-type RDFContent struct {
+// Content is a wrapper for content
+type Content struct {
 	Encoded []byte `xml:",chardata"`
 }
 
-type RDFItem struct {
-	ID      string     `xml:"guid"`
-	Title   string     `xml:"title"`
-	Link    string     `xml:"link"`
-	Content RDFContent `xml:"encoded"`
+// Item represents one entry
+type Item struct {
+	ID      string  `xml:"guid"`
+	Title   string  `xml:"title"`
+	Link    string  `xml:"link"`
+	Content Content `xml:"encoded"`
 }
 
-func ParseRDF(feedID uint, body []byte) []*model.Entry {
-	var rdf RDFFeed
+// Parse parses the feed
+func Parse(feedID uint, body []byte) []*model.Entry {
+	var rdf Feed
 	xml.Unmarshal(body, &rdf)
 
 	var entries []*model.Entry = make([]*model.Entry, 0)
@@ -48,7 +53,7 @@ func ParseRDF(feedID uint, body []byte) []*model.Entry {
 		entries = append(entries, &model.Entry{
 			FeedID:  feedID,
 			EntryID: entry.ID,
-			Link:    RemoveTrackers(entry.Link),
+			Link:    cleaner.RemoveTrackers(entry.Link),
 			Title:   title,
 			Content: text,
 		})

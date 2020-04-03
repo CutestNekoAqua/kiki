@@ -7,6 +7,7 @@ import (
 	"gitea.code-infection.com/efertone/kiki/pkg/model"
 )
 
+// All returns all available Accounts
 func All() []*model.Account {
 	db := database.NewDatabase()
 	defer db.Close()
@@ -17,6 +18,7 @@ func All() []*model.Account {
 	return accounts
 }
 
+// Add a new Account
 func Add(name, token string) {
 	db := database.NewDatabase()
 	defer db.Close()

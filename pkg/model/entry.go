@@ -7,6 +7,7 @@ import (
 	"github.com/jinzhu/gorm"
 )
 
+// Entry database model
 type Entry struct {
 	*gorm.Model
 	FeedID   uint
@@ -17,6 +18,7 @@ type Entry struct {
 	PostedAt *time.Time
 }
 
+// Excerpt generates an except for an entry
 func (e Entry) Excerpt() string {
 	if len(e.Content) < 500 {
 		return e.Content

@@ -8,6 +8,7 @@ import (
 	"gitea.code-infection.com/efertone/kiki/pkg/model"
 )
 
+// AllFor returns all Feed for an Account
 func AllFor(acc *model.Account) []*model.Feed {
 	db := database.NewDatabase()
 	defer db.Close()
@@ -18,6 +19,7 @@ func AllFor(acc *model.Account) []*model.Feed {
 	return feeds
 }
 
+// NextPendingEntries returns the next pending Entry for a Feed
 func NextPendingEntries(feed *model.Feed) *model.Entry {
 	db := database.NewDatabase()
 	defer db.Close()
@@ -32,6 +34,7 @@ func NextPendingEntries(feed *model.Feed) *model.Entry {
 	return &entry
 }
 
+// All returns all available Feeds
 func All() []*model.Feed {
 	db := database.NewDatabase()
 	defer db.Close()
@@ -42,6 +45,7 @@ func All() []*model.Feed {
 	return feeds
 }
 
+// Add a new Feed to an Account
 func Add(name, user, url string) {
 	db := database.NewDatabase()
 	defer db.Close()
@@ -56,6 +60,7 @@ func Add(name, user, url string) {
 	db.Connection().Create(&model.Feed{Name: name, User: user, URL: url})
 }
 
+// Get fetches one Feed and store results in the database
 func Get(feed *model.Feed) {
 	entries, err := Download(feed)
 	if err != nil {
@@ -81,6 +86,7 @@ func Get(feed *model.Feed) {
 	}
 }
 
+// MarAsPosted marks an Entry as Posted
 func MarAsPosted(entry *model.Entry) {
 	now := time.Now()
 	entry.PostedAt = &now
