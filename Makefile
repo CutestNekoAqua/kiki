@@ -127,5 +127,7 @@ test:
 
 .PHONY: lint
 lint:
-	$(GOLANGCI_LINT) run --fix
+	@$(GOLANGCI_LINT) run --enable-all
 
+lint-new:
+	@$(GOLANGCI_LINT) run --enable-all --new

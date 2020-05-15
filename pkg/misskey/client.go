@@ -10,13 +10,18 @@ import (
 	"time"
 )
 
-// Client is the main Misskey client struct
+// Client is the main Misskey client struct.
 type Client struct {
 	BaseURL string
 	Token   string
 }
 
-// NewClient creates a new Misskey Client
+const (
+	// Request timeout in seconds.
+	RequestTimout = 10
+)
+
+// NewClient creates a new Misskey Client.
 func NewClient(baseURL, token string) *Client {
 	return &Client{Token: token, BaseURL: baseURL}
 }
@@ -34,9 +39,11 @@ func (c Client) sendRequest(request *BaseRequest) bool {
 		log.Printf("[Misskey] Error reading request: %s\n", err)
 		return false
 	}
+
 	req.Header.Set("Content-Type", "application/json")
 	req.Header.Set("User-Agent", "Kiki, News Delivery Service")
-	client := &http.Client{Timeout: time.Second * 10}
+
+	client := &http.Client{Timeout: time.Second * RequestTimout}
 	resp, err := client.Do(req)
 
 	if err != nil {
@@ -46,6 +53,7 @@ func (c Client) sendRequest(request *BaseRequest) bool {
 
 	defer resp.Body.Close()
 	body, err := ioutil.ReadAll(resp.Body)
+
 	if err != nil {
 		log.Printf("[Misskey] Error reading body: %s\n", err)
 		return false
@@ -55,13 +63,14 @@ func (c Client) sendRequest(request *BaseRequest) bool {
 		return false
 	}
 
-	if resp.StatusCode == 200 {
+	if resp.StatusCode == http.StatusOK {
 		return true
 	}
 
 	var errorWrapper struct {
 		Error json.RawMessage `json:"error"`
 	}
+
 	err = json.Unmarshal(body, &errorWrapper)
 	if err != nil {
 		log.Println(err)
@@ -69,16 +78,21 @@ func (c Client) sendRequest(request *BaseRequest) bool {
 	}
 
 	var requestError ErrorResponse
-	json.Unmarshal(errorWrapper.Error, &requestError)
+	if err := json.Unmarshal(errorWrapper.Error, &requestError); err != nil {
+		log.Fatalf("Lethal damage: %s\n", err)
+	}
+
 	log.Printf("[Misskey] <%s> %s -> %s", requestError.Code, requestError.Info.Param, requestError.Info.Reason)
+
 	return false
 }
 
-// CreateNote sends a request to the Misskey server to create a note
+// CreateNote sends a request to the Misskey server to create a note.
 func (c *Client) CreateNote(content string) bool {
 	request := &NoteCreateRequest{
 		Visibility: "public",
 		Text:       content,
 	}
+
 	return c.sendRequest(&BaseRequest{Request: request, Path: "/notes/create"})
 }

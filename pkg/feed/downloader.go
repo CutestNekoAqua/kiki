@@ -2,7 +2,6 @@ package feed
 
 import (
 	"encoding/xml"
-	"fmt"
 	"io/ioutil"
 	"net/http"
 	"strings"
@@ -13,13 +12,13 @@ import (
 	"gitea.code-infection.com/efertone/kiki/pkg/model"
 )
 
-// Header is the wrapper object to determine what type of feed we have
+// Header is the wrapper object to determine what type of feed we have.
 type Header struct {
 	XMLName xml.Name
 	XMLNS   string `xml:"xmlns,attr"`
 }
 
-// Download fetches the content of an URI and returns with a parsed []mode.Entry
+// Download fetches the content of an URI and returns with a parsed []mode.Entry.
 func Download(feed *model.Feed) ([]*model.Entry, error) {
 	resp, err := http.Get(feed.URL)
 	if err != nil {
@@ -34,7 +33,11 @@ func Download(feed *model.Feed) ([]*model.Entry, error) {
 	}
 
 	var feedHeader Header
-	xml.Unmarshal(body, &feedHeader)
+	parseError := xml.Unmarshal(body, &feedHeader)
+
+	if parseError != nil {
+		return nil, URLParseError{feed.URL}
+	}
 
 	switch strings.ToLower(feedHeader.XMLName.Local) {
 	case "feed":
@@ -45,5 +48,5 @@ func Download(feed *model.Feed) ([]*model.Entry, error) {
 		return rdf.Parse(feed.ID, body), nil
 	}
 
-	return nil, fmt.Errorf("Unknown feed type: %s", feedHeader.XMLName.Local)
+	return nil, UnknownFeedType{feedHeader.XMLName.Local}
 }

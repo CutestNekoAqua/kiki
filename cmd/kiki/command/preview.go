@@ -10,39 +10,48 @@ import (
 	"github.com/spf13/cobra"
 )
 
-// PreviewCmd command
-var PreviewCmd = &cobra.Command{
-	Use:   "preview",
-	Short: "Preview desired content",
+// Preview command.
+func Preview() *cobra.Command {
+	var cmd = &cobra.Command{
+		Use:   "preview",
+		Short: "Preview desired content",
+	}
+
+	cmd.AddCommand(PreviewFetch())
+
+	return cmd
 }
 
-func init() {
-	PreviewCmd.AddCommand(PreviewFetchCmd)
+// PreviewFetch : Preview -> Fetch command.
+func PreviewFetch() *cobra.Command {
+	var cmd = &cobra.Command{
+		Use:   "fetch",
+		Short: "Preview fetch",
+		Run: func(cmd *cobra.Command, args []string) {
+			url, _ := cmd.Flags().GetString("url")
+			f := &model.Feed{URL: url, Name: "Preview"}
 
-	PreviewFetchCmd.Flags().String("url", "", "Feed URL (required)")
-	PreviewFetchCmd.MarkFlagRequired("url")
-}
+			db := database.NewDatabase()
+			defer db.Close()
+			db.Connection().NewRecord(f)
 
-// PreviewFetchCmd : PreviewCmd -> Fetch command
-var PreviewFetchCmd = &cobra.Command{
-	Use:   "fetch",
-	Short: "Preview fetch",
-	Run: func(cmd *cobra.Command, args []string) {
-		url, _ := cmd.Flags().GetString("url")
-		f := &model.Feed{URL: url, Name: "Preview"}
+			entries, err := feed.Download(f)
+			if err != nil {
+				log.Printf("[%s] Error: %s\n", f.Name, err)
+				return
+			}
+			for i := len(entries) - 1; i >= 0; i-- {
+				entry := entries[i]
+				fmt.Printf("== %s ==\n\n%s\n\n%s\n", entry.Title, entry.Excerpt(), entry.Link)
+			}
+		},
+	}
 
-		db := database.NewDatabase()
-		defer db.Close()
-		db.Connection().NewRecord(f)
+	cmd.Flags().String("url", "", "Feed URL (required)")
 
-		entries, err := feed.Download(f)
-		if err != nil {
-			log.Printf("[%s] Error: %s\n", f.Name, err)
-			return
-		}
-		for i := len(entries) - 1; i >= 0; i-- {
-			entry := entries[i]
-			fmt.Printf("== %s ==\n\n%s\n\n%s\n", entry.Title, entry.Excerpt(), entry.Link)
-		}
-	},
+	if err := cmd.MarkFlagRequired("url"); err != nil {
+		log.Fatalf("Lethal damage: %s\n", err)
+	}
+
+	return cmd
 }

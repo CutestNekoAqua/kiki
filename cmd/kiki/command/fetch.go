@@ -5,13 +5,17 @@ import (
 	"github.com/spf13/cobra"
 )
 
-// FetchCmd command
-var FetchCmd = &cobra.Command{
-	Use:   "fetch",
-	Short: "Fetch all Feed contents",
-	Run: func(cmd *cobra.Command, args []string) {
-		for _, f := range feed.All() {
-			feed.Get(f)
-		}
-	},
+// Fetch command.
+func Fetch() *cobra.Command {
+	var cmd = &cobra.Command{
+		Use:   "fetch",
+		Short: "Fetch all Feed contents",
+		Run: func(cmd *cobra.Command, args []string) {
+			for _, f := range feed.All() {
+				feed.Get(f)
+			}
+		},
+	}
+
+	return cmd
 }

@@ -1,29 +1,42 @@
 package command
 
 import (
+	"log"
+
 	"gitea.code-infection.com/efertone/kiki/pkg/feed"
 	"github.com/spf13/cobra"
 )
 
-// AddFeedCmd command
-var AddFeedCmd = &cobra.Command{
-	Use:   "add-feed",
-	Short: "Add Feed to a Misskey user",
-	Run: func(cmd *cobra.Command, args []string) {
-		name, _ := cmd.Flags().GetString("name")
-		user, _ := cmd.Flags().GetString("user")
-		url, _ := cmd.Flags().GetString("url")
-		feed.Add(name, user, url)
-	},
-}
+// AddFeed command.
+func AddFeed() *cobra.Command {
+	var cmd = &cobra.Command{
+		Use:   "add-feed",
+		Short: "Add Feed to a Misskey user",
+		Run: func(cmd *cobra.Command, args []string) {
+			name, _ := cmd.Flags().GetString("name")
+			user, _ := cmd.Flags().GetString("user")
+			url, _ := cmd.Flags().GetString("url")
+			feed.Add(name, user, url)
+		},
+	}
 
-func init() {
-	AddFeedCmd.Flags().String("name", "", "Feed name (required)")
-	AddFeedCmd.MarkFlagRequired("name")
+	cmd.Flags().String("name", "", "Feed name (required)")
 
-	AddFeedCmd.Flags().String("user", "", "Name of the user (required)")
-	AddFeedCmd.MarkFlagRequired("user")
+	if err := cmd.MarkFlagRequired("name"); err != nil {
+		log.Fatalf("Lethal damage: %s\n", err)
+	}
 
-	AddFeedCmd.Flags().String("url", "", "Feed URL (required)")
-	AddFeedCmd.MarkFlagRequired("url")
+	cmd.Flags().String("user", "", "Name of the user (required)")
+
+	if err := cmd.MarkFlagRequired("user"); err != nil {
+		log.Fatalf("Lethal damage: %s\n", err)
+	}
+
+	cmd.Flags().String("url", "", "Feed URL (required)")
+
+	if err := cmd.MarkFlagRequired("url"); err != nil {
+		log.Fatalf("Lethal damage: %s\n", err)
+	}
+
+	return cmd
 }

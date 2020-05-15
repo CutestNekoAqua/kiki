@@ -1,6 +1,6 @@
 package misskey
 
-// ErrorResponse represents any kind of Error responses from Misskey
+// ErrorResponse represents any kind of Error responses from Misskey.
 type ErrorResponse struct {
 	Message string `json:"message"`
 	Code    string `json:"code"`

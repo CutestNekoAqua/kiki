@@ -9,37 +9,42 @@ import (
 	"github.com/spf13/viper"
 )
 
-var (
-	configFile string
-	rootCmd    = &cobra.Command{
+func RootCommand() *cobra.Command {
+	cmd := &cobra.Command{
 		Use:   "kiki",
 		Short: "RSS Delivery Service",
 		Long:  "Deliver RSS items on Misskey",
 	}
-)
 
-func init() {
-	cobra.OnInitialize(initConfig)
-	rootCmd.PersistentFlags().Bool("debug", false, "spam stdout with debug information")
-	rootCmd.PersistentFlags().StringVar(
-		&configFile,
+	cmd.PersistentFlags().Bool("debug", false, "spam stdout with debug information")
+	cmd.PersistentFlags().String(
 		"config",
 		"",
 		"config file (default is $HOME/.config/kiki/config.yaml)")
 
-	viper.BindPFlag("debug", rootCmd.PersistentFlags().Lookup("debug"))
+	if err := viper.BindPFlag("debug", cmd.PersistentFlags().Lookup("debug")); err != nil {
+		log.Fatalf("Lethal damage: %s\n", err)
+	}
 
-	rootCmd.AddCommand(command.VersionCmd)
-	rootCmd.AddCommand(command.AddAccountCmd)
-	rootCmd.AddCommand(command.AddFeedCmd)
-	rootCmd.AddCommand(command.FetchCmd)
-	rootCmd.AddCommand(command.PreviewCmd)
-	rootCmd.AddCommand(command.SendCmd)
+	if err := viper.BindPFlag("config", cmd.PersistentFlags().Lookup("config")); err != nil {
+		log.Fatalf("Lethal damage: %s\n", err)
+	}
+
+	cmd.AddCommand(command.Version())
+	cmd.AddCommand(command.AddAccount())
+	cmd.AddCommand(command.AddFeed())
+	cmd.AddCommand(command.Fetch())
+	cmd.AddCommand(command.Preview())
+	cmd.AddCommand(command.Send())
+
+	cobra.OnInitialize(initConfig)
+
+	return cmd
 }
 
 func initConfig() {
-	if configFile != "" {
-		viper.SetConfigFile(configFile)
+	if viper.GetString("config") != "" {
+		viper.SetConfigFile(viper.GetString("config"))
 	} else {
 		viper.SetConfigName("config")
 		viper.SetConfigType("yaml")
@@ -58,10 +63,10 @@ func initConfig() {
 		log.Println("Using config file:", viper.ConfigFileUsed())
 	}
 
-	boot()
+	bootDatabase()
 }
 
-func boot() {
+func bootDatabase() {
 	database.Configure(&database.ConnectionDetails{
 		User:     viper.GetString("database.user"),
 		Password: viper.GetString("database.password"),
@@ -73,5 +78,7 @@ func boot() {
 }
 
 func main() {
-	rootCmd.Execute()
+	root := RootCommand()
+
+	root.Execute() //nolint:errcheck
 }

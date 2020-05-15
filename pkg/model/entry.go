@@ -7,7 +7,7 @@ import (
 	"github.com/jinzhu/gorm"
 )
 
-// Entry database model
+// Entry database model.
 type Entry struct {
 	*gorm.Model
 	FeedID   uint
@@ -18,18 +18,24 @@ type Entry struct {
 	PostedAt *time.Time
 }
 
-// Excerpt generates an except for an entry
+const (
+	MaximumContentLength = 500
+	MinimumContentLength = 50
+)
+
+// Excerpt generates an except for an entry.
 func (e Entry) Excerpt() string {
-	if len(e.Content) < 500 {
+	if len(e.Content) < MaximumContentLength {
 		return e.Content
 	}
 
-	var index int
-	index = strings.Index(e.Content[:500], "----")
-	if index < 50 {
-		index = strings.LastIndexAny(e.Content[:500], ".!?")
+	index := strings.Index(e.Content[:MaximumContentLength], "----")
+	if index < MinimumContentLength {
+		index = strings.LastIndexAny(e.Content[:MaximumContentLength], ".!?")
 	}
+
 	content := e.Content[:index+1]
 	content = strings.Trim(content, "\n \r-")
+
 	return content
 }

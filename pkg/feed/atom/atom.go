@@ -8,13 +8,13 @@ import (
 	"jaytaylor.com/html2text"
 )
 
-// Feed is the root wrapper
+// Feed is the root wrapper.
 type Feed struct {
 	XMLName xml.Name `xml:"feed"`
 	Entries []Entry  `xml:"entry"`
 }
 
-// Entry represents one entry
+// Entry represents one entry.
 type Entry struct {
 	ID      string `xml:"id"`
 	Title   string `xml:"title"`
@@ -22,20 +22,25 @@ type Entry struct {
 	Content []byte `xml:"content"`
 }
 
-// Link represents a <link>
+// Link represents a <link>.
 type Link struct {
 	XMLName xml.Name `xml:"link"`
 	HRef    string   `xml:"href,attr"`
 }
 
-// Parse parses the feed
-func Parse(feedID uint, body []byte) []*model.Entry {
+// Parse parses the feed.
+func Parse(feedID uint, body []byte) (entries []*model.Entry) {
 	var atom Feed
-	xml.Unmarshal(body, &atom)
 
-	var entries []*model.Entry = make([]*model.Entry, 0)
+	entries = make([]*model.Entry, 0)
+
+	err := xml.Unmarshal(body, &atom)
+	if err != nil {
+		return
+	}
+
 	for _, entry := range atom.Entries {
-		title, _ := html2text.FromString(string(entry.Title), html2text.Options{
+		title, _ := html2text.FromString(entry.Title, html2text.Options{
 			OmitLinks:    true,
 			PrettyTables: false,
 		})
@@ -52,5 +57,6 @@ func Parse(feedID uint, body []byte) []*model.Entry {
 			Content: text,
 		})
 	}
-	return entries
+
+	return
 }

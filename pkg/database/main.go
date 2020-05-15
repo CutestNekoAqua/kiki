@@ -11,20 +11,20 @@ import (
 )
 
 var (
-	connectionString string
+	connectionString string //nolint:gochecknoglobals
 )
 
-// Database is a wrapper for gorm.DB
+// Database is a wrapper for gorm.DB.
 type Database struct {
 	connection *gorm.DB
 }
 
-// Close is a wrapper to close the Database Connection
+// Close is a wrapper to close the Database Connection.
 func (d *Database) Close() {
 	d.connection.Close()
 }
 
-// Migrate is a wrapper to call AutoMigrate on a Database Connection
+// Migrate is a wrapper to call AutoMigrate on a Database Connection.
 func (d *Database) Migrate() {
 	d.Connection().AutoMigrate(
 		&model.Account{},
@@ -34,7 +34,7 @@ func (d *Database) Migrate() {
 	d.Close()
 }
 
-// Connection creates a new database connection or if exists returns with the existing one
+// Connection creates a new database connection or if exists returns with the existing one.
 func (d *Database) Connection() *gorm.DB {
 	if d.connection == nil {
 		var err error
@@ -48,7 +48,7 @@ func (d *Database) Connection() *gorm.DB {
 	return d.connection
 }
 
-// NewDatabase create a new Database wrapper
+// NewDatabase create a new Database wrapper.
 func NewDatabase() *Database {
 	return &Database{}
 }

@@ -5,7 +5,7 @@ import (
 	"strings"
 )
 
-// ConnectionDetails contains all the information about a Database Connection
+// ConnectionDetails contains all the information about a Database Connection.
 type ConnectionDetails struct {
 	User     string
 	Name     string
@@ -14,7 +14,7 @@ type ConnectionDetails struct {
 	Port     int
 }
 
-// Configure bootstraps a Database Connection
+// Configure bootstraps a Database Connection.
 func Configure(details *ConnectionDetails) {
 	var build = make([]string, 0)
 

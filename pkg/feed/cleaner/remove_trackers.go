@@ -5,7 +5,7 @@ import (
 	"strings"
 )
 
-// RemoveTrackers removed utm_ trackers
+// RemoveTrackers removed utm_ trackers.
 func RemoveTrackers(link string) string {
 	utm := regexp.MustCompile("utm_[^&]+")
 	link = utm.ReplaceAllString(link, "")

@@ -2,7 +2,7 @@ package model
 
 import "github.com/jinzhu/gorm"
 
-// Account database model
+// Account database model.
 type Account struct {
 	*gorm.Model
 	Name     string
