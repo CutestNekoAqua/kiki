@@ -16,7 +16,9 @@ else
 	DAPR_VERSION := devel
 endif
 
-LOCAL_ARCH := $(shell uname -m)
+TARGET_ARCH_LOCAL := amd64
+ifneq ($(OS),Windows_NT)
+LOCAL_ARCH = $(shell uname -m)
 ifeq ($(LOCAL_ARCH),x86_64)
 	TARGET_ARCH_LOCAL=amd64
 else ifeq ($(shell echo $(LOCAL_ARCH) | head -c 5),armv8)
@@ -26,6 +28,8 @@ else ifeq ($(shell echo $(LOCAL_ARCH) | head -c 4),armv)
 else
 	TARGET_ARCH_LOCAL=amd64
 endif
+endif
+
 export GOARCH ?= $(TARGET_ARCH_LOCAL)
 
 ifeq ($(GOARCH),amd64)
@@ -34,6 +38,9 @@ else
 	LATEST_TAG=latest-$(GOARCH)
 endif
 
+ifeq ($(OS),Windows_NT)
+	TARGET_OS_LOCAL ?= windows
+else
 LOCAL_OS := $(shell uname)
 ifeq ($(LOCAL_OS),Linux)
    TARGET_OS_LOCAL = linux
@@ -41,6 +48,7 @@ else ifeq ($(LOCAL_OS),Darwin)
    TARGET_OS_LOCAL = darwin
 else
    TARGET_OS_LOCAL ?= windows
+endif
 endif
 export GOOS ?= $(TARGET_OS_LOCAL)
 
@@ -60,7 +68,7 @@ OUT_DIR := ./dist
 BASE_PACKAGE_NAME := gitea.code-infection.com/efertone/kiki
 
 DEFAULT_LDFLAGS:=\
-  -X gitea.code-infection.com/efertone/kiki/pkg/version.Build=$(GIT_VERSION)
+  -X $(BASE_PACKAGE_NAME)/pkg/version.Build=$(GIT_VERSION)
 
 
 ifeq ($(origin DEBUG), undefined)
@@ -83,6 +91,18 @@ DAPR_LINUX_OUT_DIR := $(OUT_DIR)/linux_$(GOARCH)/$(BUILDTYPE_DIR)
 DAPR_BINS:=$(foreach ITEM,$(BINARIES),$(DAPR_OUT_DIR)/$(ITEM)$(BINARY_EXT))
 build: $(DAPR_BINS)
 
+ifeq ($(GOOS),windows)
+define genBinariesForTarget
+.PHONY: $(5)/$(1)
+$(5)/$(1):
+	set CGO_ENABLED=$(CGO)
+	set GOOS=$(3)
+	set GOARCH=$(4)
+	go build $(GCFLAGS) -ldflags=$(LDFLAGS) \
+	-o $(5)/$(1) \
+	$(2)/main.go
+endef
+else
 define genBinariesForTarget
 .PHONY: $(5)/$(1)
 $(5)/$(1):
@@ -90,6 +110,7 @@ $(5)/$(1):
 	-o $(5)/$(1) \
 	$(2)/main.go;
 endef
+endif
 
 $(foreach ITEM,$(BINARIES),$(eval $(call genBinariesForTarget,$(ITEM)$(BINARY_EXT),./cmd/$(ITEM),$(GOOS),$(GOARCH),$(DAPR_OUT_DIR))))
 
@@ -122,7 +143,6 @@ release: build archive
 .PHONY: test
 test:
 	go test ./pkg/...
-	go test ./tests/...
 
 
 .PHONY: lint
