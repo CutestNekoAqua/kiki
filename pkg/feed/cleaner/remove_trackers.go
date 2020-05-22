@@ -10,8 +10,11 @@ func RemoveTrackers(link string) string {
 	utm := regexp.MustCompile("utm_[^&]+")
 	link = utm.ReplaceAllString(link, "")
 
-	repetingAmp := regexp.MustCompile("&+")
-	link = repetingAmp.ReplaceAllString(link, "&")
+	repeatingAmp := regexp.MustCompile("&+")
+	link = repeatingAmp.ReplaceAllString(link, "&")
+
+	paramAmp := regexp.MustCompile("\\?&")
+	link = paramAmp.ReplaceAllString(link, "?")
 
 	link = strings.Trim(link, "\n\r ?&")
 
