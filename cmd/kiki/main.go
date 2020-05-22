@@ -80,5 +80,5 @@ func bootDatabase() {
 func main() {
 	root := RootCommand()
 
-	root.Execute() //nolint:errcheck
+	_ = root.Execute()
 }
