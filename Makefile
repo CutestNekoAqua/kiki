@@ -142,7 +142,7 @@ release: build archive
 
 .PHONY: test
 test:
-	go test ./pkg/...
+	go test ./... -cover
 
 
 .PHONY: lint

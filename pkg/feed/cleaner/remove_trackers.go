@@ -13,7 +13,7 @@ func RemoveTrackers(link string) string {
 	repeatingAmp := regexp.MustCompile("&+")
 	link = repeatingAmp.ReplaceAllString(link, "&")
 
-	paramAmp := regexp.MustCompile("\\?&")
+	paramAmp := regexp.MustCompile(`\?&`)
 	link = paramAmp.ReplaceAllString(link, "?")
 
 	link = strings.Trim(link, "\n\r ?&")

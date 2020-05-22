@@ -29,9 +29,24 @@ func (e Entry) Excerpt() string {
 		return e.Content
 	}
 
+	// Find divider if exists
 	index := strings.Index(e.Content[:MaximumContentLength], "----")
+
+	// Last punctuation
 	if index < MinimumContentLength {
 		index = strings.LastIndexAny(e.Content[:MaximumContentLength], ".!?")
+	}
+	// Last newline
+	if index < MinimumContentLength {
+		index = strings.LastIndexAny(e.Content[:MaximumContentLength], "\n")
+	}
+	// Last whitespace
+	if index < MinimumContentLength {
+		index = strings.LastIndexAny(e.Content[:MaximumContentLength], " ")
+	}
+	// Hard cut
+	if index < MinimumContentLength {
+		index = MaximumContentLength
 	}
 
 	content := e.Content[:index+1]
