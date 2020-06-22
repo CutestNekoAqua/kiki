@@ -10,11 +10,11 @@ import (
 	"github.com/spf13/cobra"
 )
 
-// Send command.
-func Send() *cobra.Command {
+// Publish command.
+func Publish() *cobra.Command {
 	var cmd = &cobra.Command{
-		Use:   "send",
-		Short: "Send new entries to Misskey",
+		Use:   "publish",
+		Short: "Publish new entries to Misskey",
 		Run: func(cmd *cobra.Command, args []string) {
 			for _, acc := range account.All() {
 				prov := publisher.NewTokenPublisherByName(acc.Publisher, acc.BaseURL, acc.APIToken)
