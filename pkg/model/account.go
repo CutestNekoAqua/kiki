@@ -6,5 +6,7 @@ import "github.com/jinzhu/gorm"
 type Account struct {
 	*gorm.Model
 	Name     string
+	BaseURL  string
+	Provider string
 	APIToken string
 }

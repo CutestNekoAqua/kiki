@@ -17,7 +17,7 @@ type Client struct {
 }
 
 const (
-	// Request timeout in seconds.
+	// RequestTimout is the timeout of a request in seconds.
 	RequestTimout = 10
 )
 
@@ -36,8 +36,7 @@ func (c Client) sendRequest(request *BaseRequest) bool {
 
 	req, err := http.NewRequest("POST", c.url(request.Path), bytes.NewBuffer(requestBody))
 	if err != nil {
-		log.Printf("[Misskey] Error reading request: %s\n", err)
-		return false
+		return err
 	}
 
 	req.Header.Set("Content-Type", "application/json")
@@ -47,48 +46,39 @@ func (c Client) sendRequest(request *BaseRequest) bool {
 	resp, err := client.Do(req)
 
 	if err != nil {
-		log.Printf("[Misskey] Error reading response: %s\n", err)
-		return false
+		return RequestError{Message: ResponseReadError, Origin: err}
 	}
 
 	defer resp.Body.Close()
 	body, err := ioutil.ReadAll(resp.Body)
 
 	if err != nil {
-		log.Printf("[Misskey] Error reading body: %s\n", err)
-		return false
-	}
-
-	if string(body) == "Not Found" {
-		return false
+		return RequestError{Message: ResponseReadBodyError, Origin: err}
 	}
 
 	if resp.StatusCode == http.StatusOK {
-		return true
+		return nil
 	}
 
-	var errorWrapper struct {
-		Error json.RawMessage `json:"error"`
-	}
+	var errorWrapper errorResponse
 
 	err = json.Unmarshal(body, &errorWrapper)
 	if err != nil {
-		log.Println(err)
-		return false
+		return RequestError{Message: ErrorResponseParseError, Origin: err}
 	}
 
-	var requestError ErrorResponse
-	if err := json.Unmarshal(errorWrapper.Error, &requestError); err != nil {
-		log.Fatalf("Lethal damage: %s\n", err)
+	var errorResponse ErrorResponse
+	if err := json.Unmarshal(errorWrapper.Error, &errorResponse); err != nil {
+		return RequestError{Message: ErrorResponseParseError, Origin: err}
 	}
 
-	log.Printf("[Misskey] <%s> %s -> %s", requestError.Code, requestError.Info.Param, requestError.Info.Reason)
+	log.Printf("[Misskey] <%s> %s -> %s", errorResponse.Code, errorResponse.Info.Param, errorResponse.Info.Reason)
 
-	return false
+	return UnknownError{Response: errorResponse}
 }
 
 // CreateNote sends a request to the Misskey server to create a note.
-func (c *Client) CreateNote(content string) bool {
+func (c *Client) CreateNote(content string) err {
 	request := &NoteCreateRequest{
 		Visibility: "public",
 		Text:       content,

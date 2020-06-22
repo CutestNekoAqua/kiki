@@ -19,7 +19,9 @@ type Entry struct {
 }
 
 const (
+	// MaximumContentLength is the upper limit on one post.
 	MaximumContentLength = 500
+	// MinimumContentLength is the lower limit on one post.
 	MinimumContentLength = 50
 )
 

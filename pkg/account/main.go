@@ -20,7 +20,7 @@ func All() []*model.Account {
 }
 
 // Add a new Account.
-func Add(name, token string) {
+func Add(name, token, provider string) {
 	db := database.NewDatabase()
 	defer db.Close()
 
@@ -32,5 +32,5 @@ func Add(name, token string) {
 		log.Fatalln("User already exists")
 	}
 
-	db.Connection().Create(&model.Account{Name: name, APIToken: token})
+	db.Connection().Create(&model.Account{Name: name, APIToken: token, Provider: provider})
 }
