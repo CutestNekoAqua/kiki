@@ -23,7 +23,7 @@ type RequestError struct {
 	Origin  error
 }
 
-func (e Error) Error() string {
+func (e RequestError) Error() string {
 	return fmt.Sprintf("%s: %s", e.Message, e.Origin.Error())
 }
 

@@ -6,7 +6,7 @@ import (
 
 	"gitea.code-infection.com/efertone/kiki/pkg/account"
 	"gitea.code-infection.com/efertone/kiki/pkg/feed"
-	"gitea.code-infection.com/efertone/kiki/pkg/provider"
+	"gitea.code-infection.com/efertone/kiki/pkg/publisher"
 	"github.com/spf13/cobra"
 )
 
@@ -17,14 +17,14 @@ func Send() *cobra.Command {
 		Short: "Send new entries to Misskey",
 		Run: func(cmd *cobra.Command, args []string) {
 			for _, acc := range account.All() {
-				prov := provider.NewTokenProviderByName(acc.Provider, acc.BaseURL, acc.APIToken)
+				prov := publisher.NewTokenPublisherByName(acc.Publisher, acc.BaseURL, acc.APIToken)
 
 				for _, f := range feed.AllFor(acc) {
 					next := feed.NextPendingEntries(f)
 					if next == nil {
 						continue
 					}
-					err := prov.Pulish(fmt.Sprintf("**%s**\n\n%s\n\n%s", next.Title, next.Excerpt(), next.Link))
+					err := prov.Publish(fmt.Sprintf("**%s**\n\n%s\n\n%s", next.Title, next.Excerpt(), next.Link))
 					if err == nil {
 						feed.MarAsPosted(next)
 						continue

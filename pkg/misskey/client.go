@@ -30,7 +30,7 @@ func (c Client) url(path string) string {
 	return fmt.Sprintf("%s/api%s", c.BaseURL, path)
 }
 
-func (c Client) sendRequest(request *BaseRequest) bool {
+func (c Client) sendRequest(request *BaseRequest) error {
 	request.SetAPIToken(c.Token)
 	requestBody := request.ToJSON()
 
@@ -78,7 +78,7 @@ func (c Client) sendRequest(request *BaseRequest) bool {
 }
 
 // CreateNote sends a request to the Misskey server to create a note.
-func (c *Client) CreateNote(content string) err {
+func (c *Client) CreateNote(content string) error {
 	request := &NoteCreateRequest{
 		Visibility: "public",
 		Text:       content,

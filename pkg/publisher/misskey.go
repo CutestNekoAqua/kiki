@@ -1,8 +1,8 @@
-package provider
+package publisher
 
 import "gitea.code-infection.com/efertone/kiki/pkg/misskey"
 
-// Misskey provider.
+// Misskey publisher.
 type Misskey struct {
 	Client *misskey.Client
 }
@@ -11,14 +11,14 @@ const (
 	misskeyName = "misskey"
 )
 
-// NewMisskey creates a new Misskey provider.
+// NewMisskey creates a new Misskey publisher.
 func NewMisskey(baseURL, token string) *Misskey {
 	return &Misskey{
 		Client: misskey.NewClient(baseURL, token),
 	}
 }
 
-// Name returns with the name of the Provider.
+// Name returns with the name of the publisher.
 func (m *Misskey) Name() string {
 	return misskeyName
 }
