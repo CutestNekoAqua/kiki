@@ -25,7 +25,11 @@ Optionally, you can specify with `--config` parameter.
 ## Add User
 
 ```
-./kiki add-account --name="happy_bot" --api-token="user token from misskey"
+# Misskey example
+./kiki add-account --name="happy_bot" \
+                   --api-token="user token from misskey" \
+                   --base-url="https://slippy.xyz" \
+                   --publisher="misskey"
 ```
 
 
