@@ -47,11 +47,11 @@ Kiki is designed the way she is not able to post all the new items in one batch.
 Kiki will publish only the oldest one and mark it as posted.
 
 ```
-./kiki send
+./kiki publish
 ```
 
 ## Cron job can be
 
 ```
-*/15 * * * * /home/user/kiki fetch && /home/user/kiki send
+*/15 * * * * /home/user/kiki fetch && /home/user/kiki publish
 ```

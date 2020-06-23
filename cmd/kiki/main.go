@@ -9,6 +9,7 @@ import (
 	"github.com/spf13/viper"
 )
 
+// RootCommand is the root kiki application.
 func RootCommand() *cobra.Command {
 	cmd := &cobra.Command{
 		Use:   "kiki",
@@ -35,7 +36,7 @@ func RootCommand() *cobra.Command {
 	cmd.AddCommand(command.AddFeed())
 	cmd.AddCommand(command.Fetch())
 	cmd.AddCommand(command.Preview())
-	cmd.AddCommand(command.Send())
+	cmd.AddCommand(command.Publish())
 
 	cobra.OnInitialize(initConfig)
 
