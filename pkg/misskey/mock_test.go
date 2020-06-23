@@ -1,5 +1,9 @@
 package misskey_test
 
+// I know there are core libraries and external libraries to make it
+// more compact, but I wanted to create the whole http.Client moching
+// system to learn more and it was a good opportunity to do that.
+
 import (
 	"bytes"
 	"errors"
