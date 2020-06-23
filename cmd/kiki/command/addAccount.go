@@ -3,7 +3,7 @@ package command
 import (
 	"log"
 
-	"gitea.code-infection.com/efertone/kiki/pkg/account"
+	"gitea.code-infection.com/efertone/kiki/pkg/model/account"
 	"github.com/spf13/cobra"
 )
 

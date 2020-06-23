@@ -4,9 +4,7 @@ import (
 	"fmt"
 	"log"
 
-	"gitea.code-infection.com/efertone/kiki/pkg/database"
-	"gitea.code-infection.com/efertone/kiki/pkg/feed"
-	"gitea.code-infection.com/efertone/kiki/pkg/model"
+	"gitea.code-infection.com/efertone/kiki/pkg/provider"
 	"github.com/spf13/cobra"
 )
 
@@ -29,19 +27,22 @@ func PreviewFetch() *cobra.Command {
 		Short: "Preview fetch",
 		Run: func(cmd *cobra.Command, args []string) {
 			url, _ := cmd.Flags().GetString("url")
-			f := &model.Feed{URL: url, Name: "Preview"}
+			p, _ := cmd.Flags().GetString("provider")
 
-			db := database.NewDatabase()
-			defer db.Close()
-			db.Connection().NewRecord(f)
+			content, err := provider.Download(url)
 
-			entries, err := feed.Download(f)
 			if err != nil {
-				log.Printf("[%s] Error: %s\n", f.Name, err)
-				return
+				log.Printf("[Preview] Error: %s\n", err)
 			}
+
+			handler := provider.NewProviderByName(p)
+			if handler == nil {
+				log.Printf("[Preview] Provider not found: %s\n", p)
+			}
+
+			entries := handler.Parse(content)
 			for i := len(entries) - 1; i >= 0; i-- {
-				entry := entries[i]
+				entry := entries[i].ToModel()
 				fmt.Printf("== %s ==\n\n%s\n\n%s\n", entry.Title, entry.Excerpt(), entry.Link)
 			}
 		},
@@ -50,6 +51,12 @@ func PreviewFetch() *cobra.Command {
 	cmd.Flags().String("url", "", "Feed URL (required)")
 
 	if err := cmd.MarkFlagRequired("url"); err != nil {
+		log.Fatalf("Lethal damage: %s\n", err)
+	}
+
+	cmd.Flags().String("provider", "", "Provider (required)")
+
+	if err := cmd.MarkFlagRequired("provider"); err != nil {
 		log.Fatalf("Lethal damage: %s\n", err)
 	}
 

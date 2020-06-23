@@ -3,7 +3,7 @@ package command
 import (
 	"log"
 
-	"gitea.code-infection.com/efertone/kiki/pkg/feed"
+	"gitea.code-infection.com/efertone/kiki/pkg/model/feed"
 	"github.com/spf13/cobra"
 )
 
@@ -16,7 +16,8 @@ func AddFeed() *cobra.Command {
 			name, _ := cmd.Flags().GetString("name")
 			user, _ := cmd.Flags().GetString("user")
 			url, _ := cmd.Flags().GetString("url")
-			feed.Add(name, user, url)
+			provider, _ := cmd.Flags().GetString("provider")
+			feed.Add(name, user, url, provider)
 		},
 	}
 
@@ -35,6 +36,12 @@ func AddFeed() *cobra.Command {
 	cmd.Flags().String("url", "", "Feed URL (required)")
 
 	if err := cmd.MarkFlagRequired("url"); err != nil {
+		log.Fatalf("Lethal damage: %s\n", err)
+	}
+
+	cmd.Flags().String("provider", "", "Provider (required)")
+
+	if err := cmd.MarkFlagRequired("provider"); err != nil {
 		log.Fatalf("Lethal damage: %s\n", err)
 	}
 

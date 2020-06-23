@@ -3,7 +3,7 @@ package cleaner_test
 import (
 	"testing"
 
-	"gitea.code-infection.com/efertone/kiki/pkg/feed/cleaner"
+	"gitea.code-infection.com/efertone/kiki/pkg/cleaner"
 )
 
 type TestCase struct {
