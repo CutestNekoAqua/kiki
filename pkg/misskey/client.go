@@ -5,15 +5,20 @@ import (
 	"encoding/json"
 	"fmt"
 	"io/ioutil"
-	"log"
 	"net/http"
 	"time"
 )
 
+// HTTPClient is a simple intreface for http.Client.
+type HTTPClient interface {
+	Do(req *http.Request) (*http.Response, error)
+}
+
 // Client is the main Misskey client struct.
 type Client struct {
-	BaseURL string
-	Token   string
+	BaseURL    string
+	Token      string
+	HTTPClient HTTPClient
 }
 
 const (
@@ -23,7 +28,13 @@ const (
 
 // NewClient creates a new Misskey Client.
 func NewClient(baseURL, token string) *Client {
-	return &Client{Token: token, BaseURL: baseURL}
+	return &Client{
+		Token:   token,
+		BaseURL: baseURL,
+		HTTPClient: &http.Client{
+			Timeout: time.Second * RequestTimout,
+		},
+	}
 }
 
 func (c Client) url(path string) string {
@@ -42,8 +53,7 @@ func (c Client) sendRequest(request *BaseRequest) error {
 	req.Header.Set("Content-Type", "application/json")
 	req.Header.Set("User-Agent", "Kiki, News Delivery Service")
 
-	client := &http.Client{Timeout: time.Second * RequestTimout}
-	resp, err := client.Do(req)
+	resp, err := c.HTTPClient.Do(req)
 
 	if err != nil {
 		return RequestError{Message: ResponseReadError, Origin: err}
@@ -60,7 +70,7 @@ func (c Client) sendRequest(request *BaseRequest) error {
 		return nil
 	}
 
-	var errorWrapper errorResponse
+	var errorWrapper errorResponseWrapper
 
 	err = json.Unmarshal(body, &errorWrapper)
 	if err != nil {
@@ -71,8 +81,6 @@ func (c Client) sendRequest(request *BaseRequest) error {
 	if err := json.Unmarshal(errorWrapper.Error, &errorResponse); err != nil {
 		return RequestError{Message: ErrorResponseParseError, Origin: err}
 	}
-
-	log.Printf("[Misskey] <%s> %s -> %s", errorResponse.Code, errorResponse.Info.Param, errorResponse.Info.Reason)
 
 	return UnknownError{Response: errorResponse}
 }
