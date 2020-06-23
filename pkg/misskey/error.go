@@ -27,7 +27,7 @@ func (e RequestError) Error() string {
 	return fmt.Sprintf("%s: %s", e.Message, e.Origin.Error())
 }
 
-type errorResponse struct {
+type errorResponseWrapper struct {
 	Error json.RawMessage `json:"error"`
 }
 
