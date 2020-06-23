@@ -16,7 +16,8 @@ func AddAccount() *cobra.Command {
 			name, _ := cmd.Flags().GetString("name")
 			token, _ := cmd.Flags().GetString("api-token")
 			publisher, _ := cmd.Flags().GetString("publisher")
-			account.Add(name, token, publisher)
+			baseURL, _ := cmd.Flags().GetString("base-url")
+			account.Add(name, token, publisher, baseURL)
 		},
 	}
 
@@ -32,9 +33,15 @@ func AddAccount() *cobra.Command {
 		log.Fatalf("Lethal damage: %s\n", err)
 	}
 
-	cmd.Flags().String("name", "", "Account name (required)")
+	cmd.Flags().String("base-url", "", "base-url (required)")
 
-	if err := cmd.MarkFlagRequired("name"); err != nil {
+	if err := cmd.MarkFlagRequired("base-url"); err != nil {
+		log.Fatalf("Lethal damage: %s\n", err)
+	}
+
+	cmd.Flags().String("api-token", "", "Account api-token (required)")
+
+	if err := cmd.MarkFlagRequired("api-token"); err != nil {
 		log.Fatalf("Lethal damage: %s\n", err)
 	}
 
