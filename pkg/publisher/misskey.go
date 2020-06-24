@@ -4,7 +4,7 @@ import "gitea.code-infection.com/efertone/kiki/pkg/misskey"
 
 // Misskey publisher.
 type Misskey struct {
-	Client *misskey.Client
+	Client misskey.ClientInterface
 }
 
 const (

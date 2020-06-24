@@ -14,6 +14,12 @@ type HTTPClient interface {
 	Do(req *http.Request) (*http.Response, error)
 }
 
+// ClientInterface is an interface to describe how a Client looks like.
+// Mostly for Mocking. Or later if Misskey gets multiple API versions.
+type ClientInterface interface {
+	CreateNote(content string) error
+}
+
 // Client is the main Misskey client struct.
 type Client struct {
 	BaseURL    string
