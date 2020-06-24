@@ -30,14 +30,25 @@ func PreviewFetch() *cobra.Command {
 			p, _ := cmd.Flags().GetString("provider")
 
 			content, err := provider.Download(url)
-
 			if err != nil {
 				log.Printf("[Preview] Error: %s\n", err)
+				return
+			}
+
+			if p == "xml" {
+				p, err = provider.XMLFeedTypeOf(content)
+				if err != nil {
+					log.Printf("[preview] Error: %s\n", err)
+					return
+				}
+
+				log.Printf("Match found: xml -> %s", p)
 			}
 
 			handler := provider.NewProviderByName(p)
 			if handler == nil {
 				log.Printf("[Preview] Provider not found: %s\n", p)
+				return
 			}
 
 			entries := handler.Parse(content)

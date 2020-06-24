@@ -4,6 +4,7 @@ import (
 	"log"
 
 	"gitea.code-infection.com/efertone/kiki/pkg/model/feed"
+	"gitea.code-infection.com/efertone/kiki/pkg/provider"
 	"github.com/spf13/cobra"
 )
 
@@ -16,9 +17,31 @@ func AddFeed() *cobra.Command {
 			name, _ := cmd.Flags().GetString("name")
 			user, _ := cmd.Flags().GetString("user")
 			url, _ := cmd.Flags().GetString("url")
-			provider, _ := cmd.Flags().GetString("provider")
+			p, _ := cmd.Flags().GetString("provider")
 
-			err := feed.Add(name, user, url, provider)
+			if p == "xml" {
+				var err error
+
+				content, err := provider.Download(url)
+				if err != nil {
+					log.Printf("Error: %s\n", err)
+					return
+				}
+
+				p, err = provider.XMLFeedTypeOf(content)
+				if err != nil {
+					log.Printf("Error: %s\n", err)
+					return
+				}
+
+				log.Printf("Match found: xml -> %s", p)
+			}
+
+			if provider.NewProviderByName(p) == nil {
+				log.Printf("Unknown provider: %s\n", p)
+			}
+
+			err := feed.Add(name, user, url, p)
 			if err != nil {
 				log.Fatalln(err)
 			}
