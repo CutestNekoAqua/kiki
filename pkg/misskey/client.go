@@ -43,7 +43,11 @@ func (c Client) url(path string) string {
 
 func (c Client) sendRequest(request *BaseRequest) error {
 	request.SetAPIToken(c.Token)
-	requestBody := request.ToJSON()
+
+	requestBody, err := request.ToJSON()
+	if err != nil {
+		return err
+	}
 
 	req, err := http.NewRequest("POST", c.url(request.Path), bytes.NewBuffer(requestBody))
 	if err != nil {

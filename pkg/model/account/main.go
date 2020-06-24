@@ -1,8 +1,6 @@
 package account
 
 import (
-	"log"
-
 	"gitea.code-infection.com/efertone/kiki/pkg/database"
 	"gitea.code-infection.com/efertone/kiki/pkg/model"
 )
@@ -20,16 +18,21 @@ func All() []*model.Account {
 }
 
 // Add a new Account.
-func Add(name, token, publisher, baseURL string) {
+func Add(name, token, publisher, baseURL string) error {
 	db := database.NewDatabase()
 	defer db.Close()
 
 	var count int
 
-	db.Connection().Find(&model.Account{Name: name}).Count(&count)
+	query := db.Connection().Model(&model.Account{}).Where("name = ?", name)
+	query.Count(&count)
 
-	if count > 1 {
-		log.Fatalln("User already exists")
+	if count > 0 {
+		var account model.Account
+
+		query.First(&account)
+
+		return UserAlreadyExistsError{Account: account}
 	}
 
 	db.Connection().Create(&model.Account{
@@ -38,4 +41,6 @@ func Add(name, token, publisher, baseURL string) {
 		Publisher: publisher,
 		BaseURL:   baseURL,
 	})
+
+	return nil
 }

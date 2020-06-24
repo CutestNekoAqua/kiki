@@ -1,7 +1,5 @@
 package publisher
 
-import "log"
-
 // Interface is a common interface for publishers like Misskey.
 type Interface interface {
 	Name() string
@@ -15,8 +13,6 @@ func NewTokenPublisherByName(name, baseURL, token string) Interface {
 	case "misskey":
 		return NewMisskey(baseURL, token)
 	default:
-		log.Fatalf("Unknown Publisher: %s\n", name)
+		return nil
 	}
-
-	return nil
 }

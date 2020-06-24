@@ -21,7 +21,9 @@ type Database struct {
 
 // Close is a wrapper to close the Database Connection.
 func (d *Database) Close() {
-	d.connection.Close()
+	if d.connection != nil {
+		d.connection.Close()
+	}
 }
 
 // Migrate is a wrapper to call AutoMigrate on a Database Connection.
