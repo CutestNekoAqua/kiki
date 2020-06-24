@@ -1,0 +1,901 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Blog</title>
+    <link>https://blog.gitea.io/</link>
+    <description>Recent content on Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 18 Jun 2020 11:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://blog.gitea.io/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Gitea 1.12.0 and 1.12.1 are released</title>
+      <link>https://blog.gitea.io/2020/06/gitea-1.12.0-and-1.12.1-are-released/</link>
+      <pubDate>Thu, 18 Jun 2020 11:00:00 +0000</pubDate>
+      
+      <guid>https://blog.gitea.io/2020/06/gitea-1.12.0-and-1.12.1-are-released/</guid>
+      <description>&lt;p&gt;We are proud to present the release of Gitea version 1.12.0, and subsequently 1.12.1 with some hotfixes.&lt;/p&gt;
+&lt;p&gt;In this release we merged a whopping &lt;a href=&#34;https://github.com/go-gitea/gitea/pulls?q=is%3Apr+milestone%3A1.12.0+is%3Amerged&#34;&gt;673&lt;/a&gt; pull requests! That&amp;rsquo;s the highest number &lt;em&gt;ever&lt;/em&gt; in a release!&lt;br&gt;
+We cannot express enough gratitude to those who support us, big or small.&lt;/p&gt;
+&lt;p&gt;You can download one of our pre-built binaries from our &lt;a href=&#34;https://dl.gitea.io/gitea/1.12.1/&#34;&gt;downloads page&lt;/a&gt; - make sure to select the correct platform! For further details on how to install, follow our &lt;a href=&#34;https://docs.gitea.io/en-us/install-from-binary/&#34;&gt;installation guide&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;❗ One of the features added in 1.12 is &lt;a href=&#34;#language-statistics-bar-for-repositories-8037-https-github-com-go-gitea-gitea-issues-8037&#34;&gt;language stats&lt;/a&gt;.&lt;br&gt;
+Users upgrading should note that the initial calculation of repositories may take some time, so plan accordingly.&lt;/p&gt;
+&lt;p&gt;❗ Drone users, please note that for users synching many reposistories you will need to increase &lt;code&gt;MAX_RESPONSE_ITEMS&lt;/code&gt; and &lt;code&gt;DEFAULT_PAGING_NUM&lt;/code&gt; to a larger number until a new Drone version is released. Please see the &lt;a href=&#34;https://docs.gitea.io/en-us/config-cheat-sheet/#api-api&#34;&gt;API pagination documentation&lt;/a&gt; for more details.&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;We would like to give a special thanks to the Competence Center for IT security, FZI Research Center for Information Technology
+for reporting the notice about Git Hooks.&lt;br&gt;
+Thanks to &lt;a href=&#34;https://github.com/jolheiser&#34;&gt;@jolheiser&lt;/a&gt; for fixing in &lt;a href=&#34;https://github.com/go-gitea/gitea/pull/11030&#34;&gt;#11030&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;We would also like to thank all of our supporters on &lt;a href=&#34;https://opencollective.com/gitea&#34;&gt;Open Collective&lt;/a&gt; who are helping to sustain us financially.&lt;/p&gt;
+&lt;p&gt;With that out of the way, we are excited to show you what&amp;rsquo;s new in Gitea version 1.12:&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Gitea 1.11.7 is released</title>
+      <link>https://blog.gitea.io/2020/06/gitea-1.11.7-is-released/</link>
+      <pubDate>Thu, 18 Jun 2020 10:00:00 +0000</pubDate>
+      
+      <guid>https://blog.gitea.io/2020/06/gitea-1.11.7-is-released/</guid>
+      <description>&lt;p&gt;We are proud to present the release of Gitea version 1.11.7.&lt;/p&gt;
+&lt;p&gt;We highly encourage users to update to this version for some important bug-fixes.&lt;/p&gt;
+&lt;p&gt;We have merged &lt;a href=&#34;https://github.com/go-gitea/gitea/pulls?q=is%3Apr+milestone%3A1.11.7+is%3Amerged&#34;&gt;6&lt;/a&gt; pull requests to release this version.&lt;/p&gt;
+&lt;p&gt;You can download one of our pre-built binaries from our &lt;a href=&#34;https://dl.gitea.io/gitea/1.11.7/&#34;&gt;downloads page&lt;/a&gt; - make sure to select the correct platform! For further details on how to install, follow our &lt;a href=&#34;https://docs.gitea.io/en-us/install-from-binary/&#34;&gt;installation guide&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;We would also like to thank all of our supporters on &lt;a href=&#34;https://opencollective.com/gitea&#34;&gt;Open Collective&lt;/a&gt; who are helping to sustain us financially.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Gitea 1.11.6 is released</title>
+      <link>https://blog.gitea.io/2020/05/gitea-1.11.6-is-released/</link>
+      <pubDate>Sat, 30 May 2020 10:00:00 +0000</pubDate>
+      
+      <guid>https://blog.gitea.io/2020/05/gitea-1.11.6-is-released/</guid>
+      <description>&lt;p&gt;We are proud to present the release of Gitea version 1.11.6.&lt;/p&gt;
+&lt;p&gt;We highly encourage users to update to this version for some important bug-fixes.&lt;/p&gt;
+&lt;p&gt;We have merged &lt;a href=&#34;https://github.com/go-gitea/gitea/pulls?q=is%3Apr+milestone%3A1.11.6+is%3Amerged&#34;&gt;18&lt;/a&gt; pull requests to release this version.&lt;/p&gt;
+&lt;p&gt;You can download one of our pre-built binaries from our &lt;a href=&#34;https://dl.gitea.io/gitea/1.11.6/&#34;&gt;downloads page&lt;/a&gt; - make sure to select the correct platform! For further details on how to install, follow our &lt;a href=&#34;https://docs.gitea.io/en-us/install-from-binary/&#34;&gt;installation guide&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;We would also like to thank all of our supporters on &lt;a href=&#34;https://opencollective.com/gitea&#34;&gt;Open Collective&lt;/a&gt; who are helping to sustain us financially.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Gitea 1.11.5 is released</title>
+      <link>https://blog.gitea.io/2020/05/gitea-1.11.5-is-released/</link>
+      <pubDate>Sun, 10 May 2020 10:00:00 +0000</pubDate>
+      
+      <guid>https://blog.gitea.io/2020/05/gitea-1.11.5-is-released/</guid>
+      <description>&lt;p&gt;We are proud to present the release of Gitea version 1.11.5.&lt;/p&gt;
+&lt;p&gt;We highly encourage users to update to this version for some important bug-fixes.&lt;/p&gt;
+&lt;p&gt;We have merged &lt;a href=&#34;https://github.com/go-gitea/gitea/pulls?q=is%3Apr+milestone%3A1.11.5+is%3Amerged&#34;&gt;25&lt;/a&gt; pull requests to release this version.&lt;/p&gt;
+&lt;p&gt;You can download one of our pre-built binaries from our &lt;a href=&#34;https://dl.gitea.io/gitea/1.11.5/&#34;&gt;downloads page&lt;/a&gt; - make sure to select the correct platform! For further details on how to install, follow our &lt;a href=&#34;https://docs.gitea.io/en-us/install-from-binary/&#34;&gt;installation guide&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;We would also like to thank all of our supporters on &lt;a href=&#34;https://opencollective.com/gitea&#34;&gt;Open Collective&lt;/a&gt; who are helping to sustain us financially.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Gitea 1.11.4 is released</title>
+      <link>https://blog.gitea.io/2020/04/gitea-1.11.4-is-released/</link>
+      <pubDate>Wed, 01 Apr 2020 10:00:00 +0000</pubDate>
+      
+      <guid>https://blog.gitea.io/2020/04/gitea-1.11.4-is-released/</guid>
+      <description>&lt;p&gt;We are proud to present the release of Gitea version 1.11.4. (No, this isn&amp;rsquo;t an April Fool&amp;rsquo;s joke! 😉 )&lt;/p&gt;
+&lt;p&gt;We highly encourage users to update to this version for some important bug-fixes.&lt;/p&gt;
+&lt;p&gt;We have merged &lt;a href=&#34;https://github.com/go-gitea/gitea/pulls?q=is%3Apr+milestone%3A1.11.4+is%3Amerged&#34;&gt;12&lt;/a&gt; pull requests to release this version.&lt;/p&gt;
+&lt;p&gt;You can download one of our pre-built binaries from our &lt;a href=&#34;https://dl.gitea.io/gitea/1.11.4/&#34;&gt;downloads page&lt;/a&gt; - make sure to select the correct platform! For further details on how to install, follow our &lt;a href=&#34;https://docs.gitea.io/en-us/install-from-binary/&#34;&gt;installation guide&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;We would also like to thank all of our supporters on &lt;a href=&#34;https://opencollective.com/gitea&#34;&gt;Open Collective&lt;/a&gt; who are helping to sustain us financially.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Gitea 1.11.3 and 1.10.6 released</title>
+      <link>https://blog.gitea.io/2020/03/gitea-1.11.3-and-1.10.6-released/</link>
+      <pubDate>Wed, 11 Mar 2020 00:00:00 -0300</pubDate>
+      
+      <guid>https://blog.gitea.io/2020/03/gitea-1.11.3-and-1.10.6-released/</guid>
+      <description>&lt;p&gt;We are proud to present the releases of Gitea versions 1.11.3 and 1.10.6.&lt;/p&gt;
+&lt;p&gt;These are maintenance releases, and replace their respective previous patch versions due to a few mishaps that occurred during their release.
+Our current latest release is now Gitea &lt;a href=&#34;https://dl.gitea.io/gitea/1.11.3/&#34;&gt;1.11.3&lt;/a&gt;, but if you are running Gitea 1.10 and don&amp;rsquo;t wish to upgrade
+to our 1.11 branch yet, please update your system to &lt;a href=&#34;https://dl.gitea.io/gitea/1.10.6/&#34;&gt;1.10.6&lt;/a&gt;, the latest of the 1.10 branch.&lt;/p&gt;
+&lt;p&gt;Full disclosure, the following problems affected our recent releases:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;1.11.2 (now replaced by 1.11.3) was mistakenly compiled with Go 1.14, which Gitea is not currently fully tested with and it&amp;rsquo;s known to cause &lt;a href=&#34;https://github.com/go-gitea/gitea/issues/10661&#34;&gt;a few issues&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;1.10.5 (replaced by 1.10.6 if you need to keep using the 1.10 branch) was incorrectly tagged, and was in fact a snapshot of our development branch (1.12-dev). It was also compiled with Go 1.14.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;When upgrading, please skip any intermediate patch versions (e.g., &lt;strong&gt;don&amp;rsquo;t&lt;/strong&gt; go 1.11.0 → 1.11.1 → 1.11.2) but go straight to the latest patch release instead (you can upgrade to 1.11.3 directly from versions as old as 1.6.0). If you need or wish to upgrade through the intermediate major versions, always do it via the latest patch available for each one (1.6.4 → 1.7.6 → 1.8.3 → 1.9.6 → 1.10.6 → 1.11.3).&lt;/p&gt;
+&lt;p&gt;In particular, &lt;strong&gt;do not use&lt;/strong&gt; any of these versions, as a bug in the upgrade process will delete attachments from the releases on your repositories. The affected versions are: v1.10.0, v1.10.1, v1.10.2, v1.10.3, v1.10.4, v1.11.0, and v1.11.1. See &lt;a href=&#34;https://github.com/go-gitea/gitea/issues/10526&#34;&gt;#10526&lt;/a&gt; for more information.&lt;/p&gt;
+&lt;p&gt;You can download one of our pre-built binaries from our &lt;a href=&#34;https://dl.gitea.io/gitea/1.11.3/&#34;&gt;downloads page&lt;/a&gt; - make sure to select the correct platform! For further details on how to install, follow our &lt;a href=&#34;https://docs.gitea.io/en-us/install-from-binary/&#34;&gt;installation guide&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;We would like to thank all of our supporters on &lt;a href=&#34;https://opencollective.com/gitea&#34;&gt;Open Collective&lt;/a&gt; who are helping to sustain us financially.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Gitea 1.11.2 is released</title>
+      <link>https://blog.gitea.io/2020/03/gitea-1.11.2-is-released/</link>
+      <pubDate>Fri, 06 Mar 2020 10:00:00 +0000</pubDate>
+      
+      <guid>https://blog.gitea.io/2020/03/gitea-1.11.2-is-released/</guid>
+      <description>&lt;p&gt;We are proud to present the release of Gitea version 1.11.2.&lt;/p&gt;
+&lt;p&gt;This release contains several important security fixes and multiple critical bug fixes. All users of Gitea are recommended to upgrade to this release.&lt;/p&gt;
+&lt;p&gt;(Further, there was a critical bug in our upgrade process present in versions v1.10.0 through v1.10.4, and v1.11.0 through v1.11.1 which could cause data loss. This bug was fixed in 1.11.2 and 1.10.5, should users require to upgrade via v1.10.)&lt;/p&gt;
+&lt;p&gt;We have merged &lt;a href=&#34;https://github.com/go-gitea/gitea/pulls?q=is%3Apr+milestone%3A1.11.2+is%3Amerged&#34;&gt;40&lt;/a&gt; pull requests to release this version.&lt;/p&gt;
+&lt;p&gt;You can download one of our pre-built binaries from our &lt;a href=&#34;https://dl.gitea.io/gitea/1.11.2/&#34;&gt;downloads page&lt;/a&gt; - make sure to select the correct platform! For further details on how to install, follow our &lt;a href=&#34;https://docs.gitea.io/en-us/install-from-binary/&#34;&gt;installation guide&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;We would also like to thank all of our supporters on &lt;a href=&#34;https://opencollective.com/gitea&#34;&gt;Open Collective&lt;/a&gt; who are helping to sustain us financially.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Gitea 1.11.1 is released</title>
+      <link>https://blog.gitea.io/2020/02/gitea-1.11.1-is-released/</link>
+      <pubDate>Mon, 17 Feb 2020 12:30:00 +0000</pubDate>
+      
+      <guid>https://blog.gitea.io/2020/02/gitea-1.11.1-is-released/</guid>
+      <description>&lt;p&gt;We are proud to present the release of Gitea version 1.11.1.&lt;/p&gt;
+&lt;p&gt;There is a known high priority bug that will be fixed in &lt;code&gt;1.11.2&lt;/code&gt; (&lt;a href=&#34;https://github.com/go-gitea/gitea/pull/10318&#34;&gt;#10318&lt;/a&gt;).&lt;br&gt;
+If anyone experiences this problem, you may want to use the &lt;a href=&#34;https://dl.gitea.io/gitea/1.11/&#34;&gt;1.11 branch download&lt;/a&gt; until &lt;code&gt;1.11.2&lt;/code&gt; is released.&lt;/p&gt;
+&lt;p&gt;This release fixes a serious bug in the worker pool that leads to a deadlock. (&lt;a href=&#34;https://github.com/go-gitea/gitea/pull/10284&#34;&gt;#10284&lt;/a&gt;)&lt;/p&gt;
+&lt;p&gt;We have merged &lt;a href=&#34;https://github.com/go-gitea/gitea/pulls?q=is%3Apr+milestone%3A1.11.1+is%3Aclosed&#34;&gt;14&lt;/a&gt; pull requests to release this version.&lt;/p&gt;
+&lt;p&gt;You can download one of our pre-built binaries from our &lt;a href=&#34;https://dl.gitea.io/gitea/1.11.1/&#34;&gt;downloads page&lt;/a&gt; - make sure to select the correct platform! For further details on how to install, follow our &lt;a href=&#34;https://docs.gitea.io/en-us/install-from-binary/&#34;&gt;installation guide&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;We would also like to thank all of our supporters on &lt;a href=&#34;https://opencollective.com/gitea&#34;&gt;Open Collective&lt;/a&gt; who are helping to sustain us financially.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Gitea 1.11.0 is released</title>
+      <link>https://blog.gitea.io/2020/02/gitea-1.11.0-is-released/</link>
+      <pubDate>Mon, 10 Feb 2020 00:30:00 -0300</pubDate>
+      
+      <guid>https://blog.gitea.io/2020/02/gitea-1.11.0-is-released/</guid>
+      <description>&lt;p&gt;It&amp;rsquo;s time for another major release! We are proud to present Gitea 1.11.0 to the world.&lt;/p&gt;
+&lt;p&gt;In this release, we&amp;rsquo;ve merged
+&lt;a href=&#34;https://github.com/go-gitea/gitea/pulls?utf8=%E2%9C%93&amp;amp;q=is:pr+milestone:1.11.0+is:merged&#34;&gt;481 pull requests&lt;/a&gt;. That&amp;rsquo;s the highest amount since 1.2.0 (483)!&lt;br&gt;
+Special thanks to everyone, past and present, who have contributed and made this possible.&lt;/p&gt;
+&lt;p&gt;You can download one of our pre-built binaries from our
+&lt;a href=&#34;https://dl.gitea.io/gitea/1.11.0/&#34;&gt;downloads page&lt;/a&gt; - make sure to select the
+correct platform! For further details on how to install, follow our
+&lt;a href=&#34;https://docs.gitea.io/en-us/install-from-binary/&#34;&gt;installation guide&lt;/a&gt;.&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;Unfortunately, there is still no ARMv7 build, but using ARMv6 has worked for many users, so please try that in the meantime.&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;We would like to give a special thanks to Alf-Ivar Holm from &lt;a href=&#34;https://mnemonic.no/&#34;&gt;mnemonic AS&lt;/a&gt; for reporting a security flaw in Semantic.&lt;br&gt;
+Thanks to &lt;a href=&#34;https://github.com/techknowlogick&#34;&gt;@techknowlogick&lt;/a&gt; for fixing in &lt;a href=&#34;https://github.com/go-gitea/gitea/pull/9374&#34;&gt;#9374&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;We&amp;rsquo;d like to thank all of our backers on
+&lt;a href=&#34;https://opencollective.com/gitea&#34;&gt;Open Collective&lt;/a&gt;, who are helping us deliver
+a better piece of software.&lt;/p&gt;
+&lt;p&gt;As of &lt;code&gt;1.11.0&lt;/code&gt;, Gitea requires &lt;a href=&#34;https://nodejs.org/&#34;&gt;NodeJS&lt;/a&gt; and &lt;a href=&#34;https://www.npmjs.com/&#34;&gt;npm&lt;/a&gt; to build from source.&lt;br&gt;
+More information can be found in the &lt;a href=&#34;https://docs.gitea.io/en-us/install-from-source/&#34;&gt;documentation&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;With that out of the way, we are excited to show you what&amp;rsquo;s new in Gitea version 1.11.0:&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Gitea 1.10.3 is released</title>
+      <link>https://blog.gitea.io/2020/01/gitea-1.10.3-is-released/</link>
+      <pubDate>Sat, 18 Jan 2020 12:30:00 +0000</pubDate>
+      
+      <guid>https://blog.gitea.io/2020/01/gitea-1.10.3-is-released/</guid>
+      <description>&lt;p&gt;We are proud to present the release of Gitea version 1.10.3.&lt;/p&gt;
+&lt;p&gt;We have merged &lt;a href=&#34;https://github.com/go-gitea/gitea/pulls?q=is%3Apr+milestone%3A1.10.3+is%3Aclosed&#34;&gt;15&lt;/a&gt; pull requests to release this version.&lt;/p&gt;
+&lt;p&gt;You can download one of our pre-built binaries from our &lt;a href=&#34;https://dl.gitea.io/gitea/1.10.3/&#34;&gt;downloads page&lt;/a&gt; - make sure to select the correct platform! For further details on how to install, follow our &lt;a href=&#34;https://docs.gitea.io/en-us/install-from-binary/&#34;&gt;installation guide&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;We would also like to thank all of our supporters on &lt;a href=&#34;https://opencollective.com/gitea&#34;&gt;Open Collective&lt;/a&gt; who are helping to sustain us financially.&lt;/p&gt;
+&lt;p&gt;We would like to thank those who reported and/or fixed security issues in this release:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Masum Olgun for reporting &lt;a href=&#34;https://github.com/go-gitea/gitea/pull/9678&#34;&gt;#9678&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;With special thanks to &lt;a href=&#34;https://github.com/zeripath&#34;&gt;@zeripath&lt;/a&gt; for fixing&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Brad Wadsworth from &lt;a href=&#34;https://www.watermarkinsights.com/&#34;&gt;Watermark Insights&lt;/a&gt; for reporting &lt;a href=&#34;https://github.com/go-gitea/gitea/pull/9682&#34;&gt;#9682&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;With special thanks to &lt;a href=&#34;https://github.com/zeripath&#34;&gt;@zeripath&lt;/a&gt; for fixing&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;</description>
+    </item>
+    
+    <item>
+      <title>Gitea 1.10.2 is released</title>
+      <link>https://blog.gitea.io/2020/01/gitea-1.10.2-is-released/</link>
+      <pubDate>Thu, 02 Jan 2020 12:30:00 +0000</pubDate>
+      
+      <guid>https://blog.gitea.io/2020/01/gitea-1.10.2-is-released/</guid>
+      <description>&lt;p&gt;We are proud to present the release of Gitea version 1.10.2.&lt;/p&gt;
+&lt;p&gt;We have merged &lt;a href=&#34;https://github.com/go-gitea/gitea/pulls?q=is%3Apr+milestone%3A1.10.2+is%3Aclosed&#34;&gt;18&lt;/a&gt; pull requests to release this version.&lt;/p&gt;
+&lt;p&gt;You can download one of our pre-built binaries from our &lt;a href=&#34;https://dl.gitea.io/gitea/1.10.2/&#34;&gt;downloads page&lt;/a&gt; - make sure to select the correct platform! For further details on how to install, follow our &lt;a href=&#34;https://docs.gitea.io/en-us/install-from-binary/&#34;&gt;installation guide&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;We would also like to thank all of our supporters on &lt;a href=&#34;https://opencollective.com/gitea&#34;&gt;Open Collective&lt;/a&gt; who are helping to sustain us financially.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Gitea 1.10.1 is released</title>
+      <link>https://blog.gitea.io/2019/12/gitea-1.10.1-is-released/</link>
+      <pubDate>Thu, 05 Dec 2019 12:00:00 +0000</pubDate>
+      
+      <guid>https://blog.gitea.io/2019/12/gitea-1.10.1-is-released/</guid>
+      <description>&lt;p&gt;We are proud to present the release of Gitea version 1.10.1.&lt;/p&gt;
+&lt;p&gt;We have merged &lt;a href=&#34;https://github.com/go-gitea/gitea/pulls?q=is%3Apr+milestone%3A1.10.1+is%3Aclosed&#34;&gt;19&lt;/a&gt; pull requests to release this version.&lt;/p&gt;
+&lt;p&gt;You can download one of our pre-built binaries from our &lt;a href=&#34;https://dl.gitea.io/gitea/1.10.1/&#34;&gt;downloads page&lt;/a&gt; - make sure to select the correct platform! For further details on how to install, follow our &lt;a href=&#34;https://docs.gitea.io/en-us/install-from-binary/&#34;&gt;installation guide&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;We would also like to thank all of our supporters on &lt;a href=&#34;https://opencollective.com/gitea&#34;&gt;Open Collective&lt;/a&gt; who are helping to sustain us financially.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Gitea 1.10.0 is released</title>
+      <link>https://blog.gitea.io/2019/11/gitea-1.10.0-is-released/</link>
+      <pubDate>Thu, 14 Nov 2019 00:30:00 -0300</pubDate>
+      
+      <guid>https://blog.gitea.io/2019/11/gitea-1.10.0-is-released/</guid>
+      <description>&lt;p&gt;It&amp;rsquo;s time for another major release! We are proud to present Gitea 1.10.0 to the world.&lt;/p&gt;
+&lt;p&gt;In this release, we&amp;rsquo;ve merged
+&lt;a href=&#34;https://github.com/go-gitea/gitea/pulls?utf8=%E2%9C%93&amp;amp;q=is:pr+milestone:1.10.0+is:merged&#34;&gt;322 pull requests&lt;/a&gt;.
+The list includes 97 features and enhancements, and more than 150 bug fixes and documentation improvements.&lt;/p&gt;
+&lt;p&gt;You can download one of our pre-built binaries from our
+&lt;a href=&#34;https://dl.gitea.io/gitea/1.10.0/&#34;&gt;downloads page&lt;/a&gt; - make sure to select the
+correct platform! For further details on how to install, follow our
+&lt;a href=&#34;https://docs.gitea.io/en-us/install-from-binary/&#34;&gt;installation guide&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;If you are running Raspbian and you are having problems starting Gitea, please check &lt;a href=&#34;https://github.com/raspberrypi/linux/issues/3271&#34;&gt;raspberrypi/linux/issues/#3271&lt;/a&gt; for a possible fix. Unfortunately, there is still no armv7 build, but using armv6 has worked for many users, so please try that in the meantime.&lt;/p&gt;
+&lt;p&gt;Several improvements have been made to the repository indexer. Please expect temporary increased resource usage the first time you start Gitea after upgrading as it rebuilds the indexes.&lt;/p&gt;
+&lt;p&gt;Please note that go 1.13 is now required for building the project.&lt;/p&gt;
+&lt;p&gt;We would like to give a special thanks to Ilya Pavlov (&lt;a href=&#34;https://github.com/Ilya33&#34;&gt;https://github.com/Ilya33&lt;/a&gt;) for reporting the security issue that has been patched in this release.&lt;/p&gt;
+&lt;p&gt;We&amp;rsquo;d like to thank all of our backers on
+&lt;a href=&#34;https://opencollective.com/gitea&#34;&gt;Open Collective&lt;/a&gt;, who are helping us deliver
+a better piece of software.&lt;/p&gt;
+&lt;p&gt;With that out of the way, we are excited to show you what&amp;rsquo;s new in Gitea version 1.10.0:&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Gitea 1.9.6 is released</title>
+      <link>https://blog.gitea.io/2019/11/gitea-1.9.6-is-released/</link>
+      <pubDate>Wed, 13 Nov 2019 12:00:00 +0000</pubDate>
+      
+      <guid>https://blog.gitea.io/2019/11/gitea-1.9.6-is-released/</guid>
+      <description>&lt;p&gt;We are proud to present the release of Gitea version 1.9.6.&lt;/p&gt;
+&lt;p&gt;We have merged &lt;a href=&#34;https://github.com/go-gitea/gitea/pulls?q=is%3Apr+milestone%3A1.9.6+is%3Aclosed&#34;&gt;7&lt;/a&gt; pull requests to release this version.&lt;/p&gt;
+&lt;p&gt;You can download one of our pre-built binaries from our &lt;a href=&#34;https://dl.gitea.io/gitea/1.9.6/&#34;&gt;downloads page&lt;/a&gt; - make sure to select the correct platform! For further details on how to install, follow our &lt;a href=&#34;https://docs.gitea.io/en-us/install-from-binary/&#34;&gt;installation guide&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;We would also like to thank all of our supporters on &lt;a href=&#34;https://opencollective.com/gitea&#34;&gt;Open Collective&lt;/a&gt; who are helping to sustain us financially.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Gitea 1.9.5 is released</title>
+      <link>https://blog.gitea.io/2019/10/gitea-1.9.5-is-released/</link>
+      <pubDate>Wed, 30 Oct 2019 12:00:00 +0000</pubDate>
+      
+      <guid>https://blog.gitea.io/2019/10/gitea-1.9.5-is-released/</guid>
+      <description>&lt;p&gt;We are proud to present the release of Gitea version 1.9.5.&lt;/p&gt;
+&lt;p&gt;We have merged &lt;a href=&#34;https://github.com/go-gitea/gitea/pulls?q=is%3Apr+milestone%3A1.9.5+is%3Aclosed&#34;&gt;19&lt;/a&gt; pull requests to release this version.&lt;/p&gt;
+&lt;p&gt;You can download one of our pre-built binaries from our &lt;a href=&#34;https://dl.gitea.io/gitea/1.9.5/&#34;&gt;downloads page&lt;/a&gt; - make sure to select the correct platform! For further details on how to install, follow our &lt;a href=&#34;https://docs.gitea.io/en-us/install-from-binary/&#34;&gt;installation guide&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;We would also like to thank all of our supporters on &lt;a href=&#34;https://opencollective.com/gitea&#34;&gt;Open Collective&lt;/a&gt; who are helping to sustain us financially.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Gitea 1.9.4 is released</title>
+      <link>https://blog.gitea.io/2019/10/gitea-1.9.4-is-released/</link>
+      <pubDate>Tue, 08 Oct 2019 12:00:00 +0000</pubDate>
+      
+      <guid>https://blog.gitea.io/2019/10/gitea-1.9.4-is-released/</guid>
+      <description>&lt;p&gt;We are proud to present the release of Gitea version 1.9.4.&lt;/p&gt;
+&lt;p&gt;We have merged &lt;a href=&#34;https://github.com/go-gitea/gitea/pulls?q=is%3Apr+milestone%3A1.9.4+is%3Aclosed&#34;&gt;24&lt;/a&gt; pull requests to release this version.&lt;/p&gt;
+&lt;p&gt;You can download one of our pre-built binaries from our &lt;a href=&#34;https://dl.gitea.io/gitea/1.9.4/&#34;&gt;downloads page&lt;/a&gt; - make sure to select the correct platform! For further details on how to install, follow our &lt;a href=&#34;https://docs.gitea.io/en-us/install-from-binary/&#34;&gt;installation guide&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;We would also like to thank all of our supporters on &lt;a href=&#34;https://opencollective.com/gitea&#34;&gt;Open Collective&lt;/a&gt; who are helping to sustain us financially.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Gitea 1.9.3 is released</title>
+      <link>https://blog.gitea.io/2019/09/gitea-1.9.3-is-released/</link>
+      <pubDate>Sun, 08 Sep 2019 10:53:00 +0100</pubDate>
+      
+      <guid>https://blog.gitea.io/2019/09/gitea-1.9.3-is-released/</guid>
+      <description>&lt;p&gt;We are proud to present the release of Gitea version 1.9.3.&lt;/p&gt;
+&lt;p&gt;We have merged &lt;a href=&#34;https://github.com/go-gitea/gitea/pulls?q=is%3Apr+milestone%3A1.9.3+is%3Aclosed&#34;&gt;11&lt;/a&gt; pull requests to release this version.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;This release fixed go-get private repository bug with go1.13, so we highly recommend updating.&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;You can download one of our pre-built binaries from our &lt;a href=&#34;https://dl.gitea.io/gitea/1.9.3/&#34;&gt;downloads page&lt;/a&gt; - make sure to select the correct platform! For further details on how to install, follow our &lt;a href=&#34;https://docs.gitea.io/en-us/install-from-binary/&#34;&gt;installation guide&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;We&amp;rsquo;d like to thank all of our supporters on &lt;a href=&#34;https://opencollective.com/gitea&#34;&gt;Open Collective&lt;/a&gt; who are helping to sustain us financially.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Gitea 1.9.2 is released</title>
+      <link>https://blog.gitea.io/2019/08/gitea-1.9.2-is-released/</link>
+      <pubDate>Thu, 22 Aug 2019 10:50:00 +0100</pubDate>
+      
+      <guid>https://blog.gitea.io/2019/08/gitea-1.9.2-is-released/</guid>
+      <description>&lt;p&gt;We are proud to present the release of Gitea version 1.9.2.&lt;/p&gt;
+&lt;p&gt;We have merged &lt;a href=&#34;https://github.com/go-gitea/gitea/pulls?q=is%3Apr+milestone%3A1.9.2+is%3Aclosed&#34;&gt;7&lt;/a&gt; pull requests to release this version.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;This release contains two security fixes, so we highly recommend updating.&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;You can download one of our pre-built binaries from our &lt;a href=&#34;https://dl.gitea.io/gitea/1.9.2/&#34;&gt;downloads page&lt;/a&gt; - make sure to select the correct platform! For further details on how to install, follow our &lt;a href=&#34;https://docs.gitea.io/en-us/install-from-binary/&#34;&gt;installation guide&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;We would like to give a special thanks to Bruno Pagani (&lt;a href=&#34;https://github.com/ArchangeGabriel&#34;&gt;@ArchangeGabriel&lt;/a&gt;) for reporting the security issue that has been patched in this release.&lt;/p&gt;
+&lt;p&gt;We&amp;rsquo;d like to thank all of our supporters on &lt;a href=&#34;https://opencollective.com/gitea&#34;&gt;Open Collective&lt;/a&gt; who are helping to sustain us financially.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Gitea 1.9.1 is released</title>
+      <link>https://blog.gitea.io/2019/08/gitea-1.9.1-is-released/</link>
+      <pubDate>Wed, 14 Aug 2019 10:50:00 +0100</pubDate>
+      
+      <guid>https://blog.gitea.io/2019/08/gitea-1.9.1-is-released/</guid>
+      <description>&lt;p&gt;We are proud to present the release of Gitea version 1.9.1.&lt;/p&gt;
+&lt;p&gt;We have merged &lt;a href=&#34;https://github.com/go-gitea/gitea/pulls?q=is%3Apr+milestone%3A1.9.1+is%3Aclosed&#34;&gt;22&lt;/a&gt; pull requests to release this version.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;This release contains two security fixes, so we highly recommend updating.&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;You can download one of our pre-built binaries from our &lt;a href=&#34;https://dl.gitea.io/gitea/1.9.1/&#34;&gt;downloads page&lt;/a&gt; - make sure to select the correct platform! For further details on how to install, follow our &lt;a href=&#34;https://docs.gitea.io/en-us/install-from-binary/&#34;&gt;installation guide&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;We would like to give a special thanks to Gabriel Campana from the &lt;a href=&#34;https://twitter.com/donjonledger&#34;&gt;Ledger Security Team&lt;/a&gt; for reporting the security issue that has been patched in this release.&lt;/p&gt;
+&lt;p&gt;We&amp;rsquo;d like to thank all of our supporters on &lt;a href=&#34;https://opencollective.com/gitea&#34;&gt;Open Collective&lt;/a&gt; who are helping to sustain us financially.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Gitea 1.9.0 is released</title>
+      <link>https://blog.gitea.io/2019/07/gitea-1.9.0-is-released/</link>
+      <pubDate>Wed, 31 Jul 2019 10:40:00 +0100</pubDate>
+      
+      <guid>https://blog.gitea.io/2019/07/gitea-1.9.0-is-released/</guid>
+      <description>&lt;p&gt;It&amp;rsquo;s time for another major release! We are proud to present Gitea
+1.9.0 to the world.&lt;br&gt;
+In this release, we merged
+&lt;a href=&#34;https://github.com/go-gitea/gitea/pulls?utf8=%E2%9C%93&amp;amp;q=is:pr+milestone:1.9.0+is:merged&#34;&gt;370 pull requests&lt;/a&gt;
+&amp;ndash; This is more than 1.8.0 (245) and 1.7.0 (158)!&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;This version of Gitea contains security fixes that could not be backported to 1.8. For this reason, we strongly recommend updating.&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;You can download one of our pre-built binaries from our
+&lt;a href=&#34;https://dl.gitea.io/gitea/1.9.0/&#34;&gt;downloads page&lt;/a&gt; - make sure to select the
+correct platform! For further details on how to install, follow our
+&lt;a href=&#34;https://docs.gitea.io/en-us/install-from-binary/&#34;&gt;installation guide&lt;/a&gt;.&lt;br&gt;
+Unfortunately, there is a known issue with our prebuilt images on armv7, see &lt;a href=&#34;https://github.com/go-gitea/gitea/issues/6700&#34;&gt;#6700&lt;/a&gt;.
+Using armv6 has worked for many users, so please try that in the meantime.&lt;/p&gt;
+&lt;p&gt;We&amp;rsquo;d like to thank all of our backers on
+&lt;a href=&#34;https://opencollective.com/gitea&#34;&gt;Open Collective&lt;/a&gt;, who are helping us deliver
+a better piece of software.&lt;/p&gt;
+&lt;p&gt;A few things we would like to mention with this release:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;We are in the process of moving Gitea&amp;rsquo;s development to &lt;a href=&#34;https://gitea.com&#34;&gt;https://gitea.com&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;Currently the only repository left on GitHub is Gitea itself.&lt;/li&gt;
+&lt;li&gt;We are hoping to be able to migrate completely before the next release.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;We have changed our Docker tagging!
+&lt;ul&gt;
+&lt;li&gt;Starting now the &lt;code&gt;:1&lt;/code&gt; and &lt;code&gt;:1.9&lt;/code&gt; tags will only be updated on tagged release like &lt;code&gt;1.9.0&lt;/code&gt; and not on every commit to a release branch. This means that those tags will be more stable. Release candidate tags will be ignored.&lt;/li&gt;
+&lt;li&gt;For example, the &lt;code&gt;:1&lt;/code&gt; tag will follow &lt;code&gt;:1.10&lt;/code&gt; that itself will only be created for the first stable release of &lt;code&gt;1.10.0&lt;/code&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Logging has been overhauled (thanks &lt;a href=&#34;https://github.com/zeripath&#34;&gt;&lt;strong&gt;@zeripath&lt;/strong&gt;&lt;/a&gt;!) (&lt;a href=&#34;https://github.com/go-gitea/gitea/pull/6038&#34;&gt;#6038&lt;/a&gt;)
+&lt;ul&gt;
+&lt;li&gt;For a more complete overview, check out &lt;a href=&#34;https://docs.gitea.io/en-us/logging-configuration/&#34;&gt;the documentation&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;With that out of the way, we are excited to show you what&amp;rsquo;s new in Gitea version 1.9.0:&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Gitea 1.8.3 is released</title>
+      <link>https://blog.gitea.io/2019/06/gitea-1.8.3-is-released/</link>
+      <pubDate>Mon, 17 Jun 2019 10:50:00 +0100</pubDate>
+      
+      <guid>https://blog.gitea.io/2019/06/gitea-1.8.3-is-released/</guid>
+      <description>&lt;p&gt;We are proud to present the release of Gitea version 1.8.3.&lt;/p&gt;
+&lt;p&gt;We have merged &lt;a href=&#34;https://github.com/go-gitea/gitea/pulls?q=is%3Apr+milestone%3A1.8.3+is%3Aclosed&#34;&gt;8&lt;/a&gt; pull requests to release this version.&lt;/p&gt;
+&lt;p&gt;You can download one of our pre-built binaries from our &lt;a href=&#34;https://dl.gitea.io/gitea/1.8.3/&#34;&gt;downloads page&lt;/a&gt; - make sure to select the correct platform! For further details on how to install, follow our &lt;a href=&#34;https://docs.gitea.io/en-us/install-from-binary/&#34;&gt;installation guide&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;We&amp;rsquo;d like to thank all of our supporters on &lt;a href=&#34;https://opencollective.com/gitea&#34;&gt;Open Collective&lt;/a&gt; who are helping to sustain us financially.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Gitea 1.8.2 is released</title>
+      <link>https://blog.gitea.io/2019/05/gitea-1.8.2-is-released/</link>
+      <pubDate>Thu, 30 May 2019 10:50:00 +0100</pubDate>
+      
+      <guid>https://blog.gitea.io/2019/05/gitea-1.8.2-is-released/</guid>
+      <description>&lt;p&gt;We are proud to present the release of Gitea version 1.8.2.&lt;/p&gt;
+&lt;p&gt;We have merged &lt;a href=&#34;https://github.com/go-gitea/gitea/pulls?q=is%3Apr+milestone%3A1.8.2+is%3Aclosed&#34;&gt;13&lt;/a&gt; pull requests to release this version.&lt;/p&gt;
+&lt;p&gt;You can download one of our pre-built binaries from our &lt;a href=&#34;https://dl.gitea.io/gitea/1.8.2/&#34;&gt;downloads page&lt;/a&gt; - make sure to select the correct platform! For further details on how to install, follow our &lt;a href=&#34;https://docs.gitea.io/en-us/install-from-binary/&#34;&gt;installation guide&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;We&amp;rsquo;d like to thank all of our supporters on &lt;a href=&#34;https://opencollective.com/gitea&#34;&gt;Open Collective&lt;/a&gt; who are helping to sustain us financially.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Gitea 1.8.1 is released</title>
+      <link>https://blog.gitea.io/2019/05/gitea-1.8.1-is-released/</link>
+      <pubDate>Wed, 08 May 2019 10:50:00 +0100</pubDate>
+      
+      <guid>https://blog.gitea.io/2019/05/gitea-1.8.1-is-released/</guid>
+      <description>&lt;p&gt;We are proud to present the release of Gitea version 1.8.1.&lt;/p&gt;
+&lt;p&gt;We have merged &lt;a href=&#34;https://github.com/go-gitea/gitea/pulls?q=is%3Apr+milestone%3A1.8.1+is%3Aclosed&#34;&gt;24&lt;/a&gt; pull requests to release this version.&lt;/p&gt;
+&lt;p&gt;You can download one of our pre-built binaries from our &lt;a href=&#34;https://dl.gitea.io/gitea/1.8.1/&#34;&gt;downloads page&lt;/a&gt; - make sure to select the correct platform! For further details on how to install, follow our &lt;a href=&#34;https://docs.gitea.io/en-us/install-from-binary/&#34;&gt;installation guide&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;We&amp;rsquo;d like to thank all of our supporters on &lt;a href=&#34;https://opencollective.com/gitea&#34;&gt;Open Collective&lt;/a&gt; who are helping us with financial sustainment.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Gitea 1.8.0 is released</title>
+      <link>https://blog.gitea.io/2019/04/gitea-1.8.0-is-released/</link>
+      <pubDate>Sun, 21 Apr 2019 10:40:00 +0100</pubDate>
+      
+      <guid>https://blog.gitea.io/2019/04/gitea-1.8.0-is-released/</guid>
+      <description>&lt;p&gt;The time has come for another major release! We are proud to present Gitea
+1.8.0 to the world. &lt;strong&gt;This release contains two new security fixes which cannot be backported to the 1.7.0 branch, so it is recommended to update to this version.&lt;/strong&gt;
+In this release, we merged
+&lt;a href=&#34;https://github.com/go-gitea/gitea/pulls?utf8=%E2%9C%93&amp;amp;q=is:pr+milestone:1.8.0+is:merged&#34;&gt;245 pull requests&lt;/a&gt;
+&amp;ndash; This is more than 1.7.0 (157) and 1.6.0 (178).&lt;/p&gt;
+&lt;p&gt;You can download one of our pre-built binaries from our
+&lt;a href=&#34;https://dl.gitea.io/gitea/1.8.0/&#34;&gt;downloads page&lt;/a&gt; - make sure to select the
+correct platform! For further details on how to install, follow our
+&lt;a href=&#34;https://docs.gitea.io/en-us/install-from-binary/&#34;&gt;installation guide&lt;/a&gt;. Unfortunately
+there is a known issue with our prebuilt images on armv7, see &lt;a href=&#34;https://github.com/go-gitea/gitea/issues/6700&#34;&gt;#6700&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;We&amp;rsquo;d like to thank all of our backers on
+&lt;a href=&#34;https://opencollective.com/gitea&#34;&gt;Open Collective&lt;/a&gt;, who are helping us deliver
+a better piece of software.&lt;/p&gt;
+&lt;p&gt;With that out of the way, here&amp;rsquo;s what&amp;rsquo;s new in Gitea version 1.8.0:&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Gitea 1.7.6 is released</title>
+      <link>https://blog.gitea.io/2019/04/gitea-1.7.6-is-released/</link>
+      <pubDate>Sat, 13 Apr 2019 10:50:00 +0100</pubDate>
+      
+      <guid>https://blog.gitea.io/2019/04/gitea-1.7.6-is-released/</guid>
+      <description>&lt;p&gt;We proudly present the security release of Gitea version 1.7.6. &lt;strong&gt;This release contains a very important security fix so it is highly recommended to update to this version.&lt;/strong&gt; Users running our version 1.8 release candidates should also update.&lt;/p&gt;
+&lt;p&gt;We have merged 2 pull requests to release this version.&lt;/p&gt;
+&lt;p&gt;You can download one of our pre-built binaries from our &lt;a href=&#34;https://dl.gitea.io/gitea/1.7.6/&#34;&gt;downloads page&lt;/a&gt; - make sure to select the correct platform! For further details on how to install, follow our &lt;a href=&#34;https://docs.gitea.io/en-us/install-from-binary/&#34;&gt;installation guide&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;We would like to say special thanks to &lt;a href=&#34;https://github.com/zeripath&#34;&gt;zeripath&lt;/a&gt; who reported and fixed the security issue fixed in this release, and &lt;a href=&#34;https://github.com/mrsdizzie&#34;&gt;mrsdizzie&lt;/a&gt; who confirmed and produced a minimal exploitable testcase for the security issue.&lt;/p&gt;
+&lt;p&gt;We&amp;rsquo;d like to thank all of our supporters on &lt;a href=&#34;https://opencollective.com/gitea&#34;&gt;Open Collective&lt;/a&gt; who are helping us with financial sustainment.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Gitea 1.7.5 is released</title>
+      <link>https://blog.gitea.io/2019/03/gitea-1.7.5-is-released/</link>
+      <pubDate>Wed, 27 Mar 2019 12:00:00 -0500</pubDate>
+      
+      <guid>https://blog.gitea.io/2019/03/gitea-1.7.5-is-released/</guid>
+      <description>&lt;p&gt;We are happy to announce that version 1.7.5 of Gitea has now been released. This version only has 3 merged pull requests as we prepare for 1.8.0!&lt;/p&gt;
+&lt;p&gt;You can download one of our pre-built binaries from our
+&lt;a href=&#34;https://dl.gitea.io/gitea/1.7.5/&#34;&gt;downloads page&lt;/a&gt; - make sure to select the
+correct platform! For further details on how to install, follow our
+&lt;a href=&#34;https://docs.gitea.io/en-us/install-from-binary/&#34;&gt;installation guide&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;We&amp;rsquo;d like to thank all of our supporters on
+&lt;a href=&#34;https://opencollective.com/gitea&#34;&gt;Open Collective&lt;/a&gt; who are helping us
+with financial sustainment.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Gitea 1.7.4 is released</title>
+      <link>https://blog.gitea.io/2019/03/gitea-1.7.4-is-released/</link>
+      <pubDate>Tue, 12 Mar 2019 12:00:00 -0500</pubDate>
+      
+      <guid>https://blog.gitea.io/2019/03/gitea-1.7.4-is-released/</guid>
+      <description>&lt;p&gt;We are happy to announce version 1.7.4 of Gitea has now been released. This
+is a smaller release, with only 4 merged PRs, but it contains an important
+security related fix and so we recommend upgrading whenever possible.&lt;/p&gt;
+&lt;p&gt;You can download one of our pre-built binaries from our
+&lt;a href=&#34;https://dl.gitea.io/gitea/1.7.4/&#34;&gt;downloads page&lt;/a&gt; - make sure to select the
+correct platform! For further details on how to install, follow our
+&lt;a href=&#34;https://docs.gitea.io/en-us/install-from-binary/&#34;&gt;installation guide&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;We&amp;rsquo;d like to thank &lt;a href=&#34;https://bitflipper.eu&#34;&gt;Anti Räis&lt;/a&gt; for reporting the security issue that has been patched
+in this release. Another thank you goes to all of our supporters on
+&lt;a href=&#34;https://opencollective.com/gitea&#34;&gt;Open Collective&lt;/a&gt; who are also helping us
+with financial sustainment.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Release of 1.7.3</title>
+      <link>https://blog.gitea.io/2019/02/release-of-1.7.3/</link>
+      <pubDate>Wed, 27 Feb 2019 12:00:00 -0500</pubDate>
+      
+      <guid>https://blog.gitea.io/2019/02/release-of-1.7.3/</guid>
+      <description>&lt;p&gt;We proudly present the minor release of Gitea version 1.7.3.
+We have merged 11 pull requests to release this version.
+You can download one of our pre-built binaries from our &lt;a href=&#34;https://dl.gitea.io/gitea/1.7.3/&#34;&gt;downloads page&lt;/a&gt;,
+you just need to select the correct platform. For further installation details, follow our &lt;a href=&#34;https://docs.gitea.io/en-us/install-from-binary/&#34;&gt;installation guide&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Another thank you goes to all of our supporters on &lt;a href=&#34;https://opencollective.com/gitea&#34;&gt;Open Collective&lt;/a&gt;
+who are also helping us with financial sustainment.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Release of 1.7.2</title>
+      <link>https://blog.gitea.io/2019/02/release-of-1.7.2/</link>
+      <pubDate>Thu, 14 Feb 2019 12:00:00 -0500</pubDate>
+      
+      <guid>https://blog.gitea.io/2019/02/release-of-1.7.2/</guid>
+      <description>&lt;p&gt;We proudly present the minor release of Gitea version 1.7.2.
+We have merged 13 pull requests to release this version.
+You can download one of our pre-built binaries from our &lt;a href=&#34;https://dl.gitea.io/gitea/1.7.2/&#34;&gt;downloads page&lt;/a&gt;,
+you just need to select the correct platform. For further details of the installation follow our &lt;a href=&#34;https://docs.gitea.io/en-us/install-from-binary/&#34;&gt;installation guide&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Another thank you goes to all of our supporters on &lt;a href=&#34;https://opencollective.com/gitea&#34;&gt;Open Collective&lt;/a&gt;
+who are also helping us with financial sustainment.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Release of 1.7.1</title>
+      <link>https://blog.gitea.io/2019/02/release-of-1.7.1/</link>
+      <pubDate>Fri, 01 Feb 2019 09:12:00 +0800</pubDate>
+      
+      <guid>https://blog.gitea.io/2019/02/release-of-1.7.1/</guid>
+      <description>&lt;p&gt;We proudly present the minor release of Gitea version 1.7.1. &lt;strong&gt;This release contains some
+security fixes so it is highly recommended to update to latest release.&lt;/strong&gt;
+We have merged 15 pull requests to release this version and built gitea with go1.11.5 to fix &lt;a href=&#34;https://github.com/golang/go/issues?q=milestone%3AGo1.11.5+label%3ACherryPickApproved&#34;&gt;a golang bug&lt;/a&gt;.
+You can download one of our pre-built binaries from our &lt;a href=&#34;https://dl.gitea.io/gitea/1.7.1/&#34;&gt;downloads page&lt;/a&gt;,
+you just need to select the correct platform. For further details of the installation follow our &lt;a href=&#34;https://docs.gitea.io/en-us/install-from-binary/&#34;&gt;installation guide&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;We would like to say special thanks to those who reported security issues or sent patches fixed in this release.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://checkmarx.com/&#34;&gt;Dor Tumarkin, Security Researcher at Checkmarx&lt;/a&gt; (&lt;a href=&#34;https://github.com/go-gitea/gitea/pull/5907&#34;&gt;#5907&lt;/a&gt; and &lt;a href=&#34;https://github.com/go-gitea/gitea/pull/5916&#34;&gt;#5916&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://peter.colberg.org/&#34;&gt;Peter Colberg&lt;/a&gt; (&lt;a href=&#34;https://github.com/go-gitea/gitea/pull/5908&#34;&gt;#5908&lt;/a&gt;)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Another thank you goes to all of our supporters on &lt;a href=&#34;https://opencollective.com/gitea&#34;&gt;Open Collective&lt;/a&gt;
+who are also helping us with financial sustainment.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Gitea 1.7.0 is released</title>
+      <link>https://blog.gitea.io/2019/01/gitea-1.7.0-is-released/</link>
+      <pubDate>Thu, 24 Jan 2019 11:38:00 +0800</pubDate>
+      
+      <guid>https://blog.gitea.io/2019/01/gitea-1.7.0-is-released/</guid>
+      <description>&lt;p&gt;The time has come for another major release! We are proud to present Gitea
+1.7.0 to the world. In this release, we merged
+&lt;a href=&#34;https://github.com/go-gitea/gitea/pulls?utf8=%E2%9C%93&amp;amp;q=is%3Apr+milestone%3A1.7.0+is%3Amerged&#34;&gt;157 pull requests&lt;/a&gt;
+&amp;ndash; it&amp;rsquo;s less than last time (178).&lt;/p&gt;
+&lt;p&gt;You can download one of our pre-built binaries from our
+&lt;a href=&#34;https://dl.gitea.io/gitea/1.7.0/&#34;&gt;downloads page&lt;/a&gt; - make sure to select the
+correct platform! For further details on how to install, follow our
+&lt;a href=&#34;https://docs.gitea.io/en-us/install-from-binary/&#34;&gt;installation guide&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;We&amp;rsquo;d like to thank all of our backers on
+&lt;a href=&#34;https://opencollective.com/gitea&#34;&gt;Open Collective&lt;/a&gt;, who are helping us deliver
+a better piece of software.&lt;/p&gt;
+&lt;p&gt;With that out of the way, here&amp;rsquo;s what&amp;rsquo;s new in Gitea version 1.7.0:&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Release of 1.6.3</title>
+      <link>https://blog.gitea.io/2019/01/release-of-1.6.3/</link>
+      <pubDate>Fri, 04 Jan 2019 01:00:00 +0200</pubDate>
+      
+      <guid>https://blog.gitea.io/2019/01/release-of-1.6.3/</guid>
+      <description>&lt;p&gt;We proudly present the security release of Gitea version 1.6.3. &lt;strong&gt;This release contains a very important
+security fix so it is highly recommended to update to latest release.&lt;/strong&gt;
+We have merged 2 pull requests to release this version.
+You can download one of our pre-built binaries from our &lt;a href=&#34;https://dl.gitea.io/gitea/1.6.3/&#34;&gt;downloads page&lt;/a&gt;,
+you just need to select the correct platform. For further details of the installation follow our &lt;a href=&#34;https://docs.gitea.io/en-us/install-from-binary/&#34;&gt;installation guide&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;We would like to say special thanks to &lt;a href=&#34;https://github.com/zeripath&#34;&gt;zeripath&lt;/a&gt; who reported and fixed the security issue fixed in this release.&lt;/p&gt;
+&lt;p&gt;Another thank you goes to all of our supporters on &lt;a href=&#34;https://opencollective.com/gitea&#34;&gt;Open Collective&lt;/a&gt;
+who are also helping us with financial sustainment.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Release of 1.6.2</title>
+      <link>https://blog.gitea.io/2018/12/release-of-1.6.2/</link>
+      <pubDate>Fri, 21 Dec 2018 01:00:00 +0200</pubDate>
+      
+      <guid>https://blog.gitea.io/2018/12/release-of-1.6.2/</guid>
+      <description>&lt;p&gt;We proudly present the bugfix release of Gitea version 1.6.2. This release contains important
+security fixes so it is highly recommended to update to latest release.
+We have merged 10 pull requests to release this version.
+You can download one of our pre-built binaries from our &lt;a href=&#34;https://dl.gitea.io/gitea/1.6.2/&#34;&gt;downloads page&lt;/a&gt;,
+you just need to select the correct platform. For further details of the installation follow our &lt;a href=&#34;https://docs.gitea.io/en-us/install-from-binary/&#34;&gt;installation guide&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;We would like to say special thanks to those who reported security issues fixed in this release.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/PentesterLab&#34;&gt;Louis from @PentesterLab&lt;/a&gt; (&lt;a href=&#34;https://github.com/go-gitea/gitea/pull/5571&#34;&gt;#5571&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/simia-zaru&#34;&gt;@simia-zaru &lt;/a&gt; (&lt;a href=&#34;https://github.com/go-gitea/gitea/pull/5570&#34;&gt;#5570&lt;/a&gt;)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Another thank you goes to all of our supporters on &lt;a href=&#34;https://opencollective.com/gitea&#34;&gt;Open Collective&lt;/a&gt;
+who are also helping us with financial sustainment.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Gitea 1.6.1 is released</title>
+      <link>https://blog.gitea.io/2018/12/gitea-1.6.1-is-released/</link>
+      <pubDate>Sat, 08 Dec 2018 12:00:00 +0300</pubDate>
+      
+      <guid>https://blog.gitea.io/2018/12/gitea-1.6.1-is-released/</guid>
+      <description>&lt;p&gt;We are happy to announce version 1.6.1 of Gitea has now been released. This
+is a smaller release, with 7 merged PRs. You can download one of our pre-built
+binaries from our &lt;a href=&#34;https://dl.gitea.io/gitea/1.6.1/&#34;&gt;downloads page&lt;/a&gt; - make
+sure to select the correct platform! For further details on how to install, follow our
+&lt;a href=&#34;https://docs.gitea.io/en-us/install-from-binary/&#34;&gt;installation guide&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;We&amp;rsquo;d like to thank all of our supporters on
+&lt;a href=&#34;https://opencollective.com/gitea&#34;&gt;Open Collective&lt;/a&gt; who are also helping us
+with financial sustainment.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Gitea 1.6.0 is released</title>
+      <link>https://blog.gitea.io/2018/11/gitea-1.6.0-is-released/</link>
+      <pubDate>Thu, 22 Nov 2018 21:23:00 +0800</pubDate>
+      
+      <guid>https://blog.gitea.io/2018/11/gitea-1.6.0-is-released/</guid>
+      <description>&lt;p&gt;The time has come for another major release! We are proud to present Gitea
+1.6.0 to the world. In this release, we merged
+&lt;a href=&#34;https://github.com/go-gitea/gitea/pulls?utf8=%E2%9C%93&amp;amp;q=is%3Apr+milestone%3A1.6.0+is%3Amerged&#34;&gt;178 pull requests&lt;/a&gt;
+&amp;ndash; it&amp;rsquo;s less than last time (258).&lt;/p&gt;
+&lt;p&gt;You can download one of our pre-built binaries from our
+&lt;a href=&#34;https://dl.gitea.io/gitea/1.6.0/&#34;&gt;downloads page&lt;/a&gt; - make sure to select the
+correct platform! For further details on how to install, follow our
+&lt;a href=&#34;https://docs.gitea.io/en-us/install-from-binary/&#34;&gt;installation guide&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;We&amp;rsquo;d like to thank all of our backers on
+&lt;a href=&#34;https://opencollective.com/gitea&#34;&gt;Open Collective&lt;/a&gt;, who are helping us deliver
+a better piece of software.&lt;/p&gt;
+&lt;p&gt;With that out of the way, here&amp;rsquo;s what&amp;rsquo;s new in 1.6.0:&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Gitea 1.5.3 is released</title>
+      <link>https://blog.gitea.io/2018/10/gitea-1.5.3-is-released/</link>
+      <pubDate>Wed, 31 Oct 2018 12:00:00 +0300</pubDate>
+      
+      <guid>https://blog.gitea.io/2018/10/gitea-1.5.3-is-released/</guid>
+      <description>&lt;p&gt;We are happy to announce version 1.5.3 of Gitea has now been released. This
+is a smaller release, with only 1 merged PRs, but it contains critcal
+security fix for vulnerability that could potentially allow for authorized
+users to do remote code excution.&lt;/p&gt;
+&lt;p&gt;You can download one of our pre-built binaries from our
+&lt;a href=&#34;https://dl.gitea.io/gitea/1.5.3/&#34;&gt;downloads page&lt;/a&gt; - make sure to select the
+correct platform! For further details on how to install, follow our
+&lt;a href=&#34;https://docs.gitea.io/en-us/install-from-binary/&#34;&gt;installation guide&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;We&amp;rsquo;d like to thank &lt;a href=&#34;https://github.com/5alt&#34;&gt;5alt&lt;/a&gt; for reporting security issue
+that have been patched in this release. Another thank you goes to all of our
+supporters on &lt;a href=&#34;https://opencollective.com/gitea&#34;&gt;Open Collective&lt;/a&gt; who are also
+helping us with financial sustainment.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Gitea 1.5.2 is released</title>
+      <link>https://blog.gitea.io/2018/10/gitea-1.5.2-is-released/</link>
+      <pubDate>Tue, 09 Oct 2018 23:00:00 +0300</pubDate>
+      
+      <guid>https://blog.gitea.io/2018/10/gitea-1.5.2-is-released/</guid>
+      <description>&lt;p&gt;We are happy to announce version 1.5.2 of Gitea has now been released. This
+is a smaller release, with only 12 merged PRs, but it contains several
+security related fixes and so we recommend upgrading whenever possible.&lt;/p&gt;
+&lt;p&gt;You can download one of our pre-built binaries from our
+&lt;a href=&#34;https://dl.gitea.io/gitea/1.5.2/&#34;&gt;downloads page&lt;/a&gt; - make sure to select the
+correct platform! For further details on how to install, follow our
+&lt;a href=&#34;https://docs.gitea.io/en-us/install-from-binary/&#34;&gt;installation guide&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;We&amp;rsquo;d like to thank &lt;a href=&#34;https://github.com/cezar97&#34;&gt;cezar97&lt;/a&gt; for reporting the security issue that have been patched
+in this release. Another thank you goes to all of our supporters on
+&lt;a href=&#34;https://opencollective.com/gitea&#34;&gt;Open Collective&lt;/a&gt; who are also helping us
+with financial sustainment.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Gitea 1.5.1 is released</title>
+      <link>https://blog.gitea.io/2018/09/gitea-1.5.1-is-released/</link>
+      <pubDate>Mon, 03 Sep 2018 01:00:00 +0000</pubDate>
+      
+      <guid>https://blog.gitea.io/2018/09/gitea-1.5.1-is-released/</guid>
+      <description>&lt;p&gt;We are happy to announce version 1.5.1 of Gitea has now been released. This
+is a smaller release, with only 9 merged PRs, but it contains several
+security related fixes and so we recommend upgrading whenever possible.&lt;/p&gt;
+&lt;p&gt;You can download one of our pre-built binaries from our
+&lt;a href=&#34;https://dl.gitea.io/gitea/1.5.1/&#34;&gt;downloads page&lt;/a&gt; - make sure to select the
+correct platform! For further details on how to install, follow our
+&lt;a href=&#34;https://docs.gitea.io/en-us/install-from-binary/&#34;&gt;installation guide&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;We&amp;rsquo;d like to thank Cezar97 for reporting the security issues that have been patched
+in this release. Another thank you goes to all of our supporters on
+&lt;a href=&#34;https://opencollective.com/gitea&#34;&gt;Open Collective&lt;/a&gt; who are also helping us
+with financial sustainment.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Gitea 1.5.0 is released</title>
+      <link>https://blog.gitea.io/2018/08/gitea-1.5.0-is-released/</link>
+      <pubDate>Fri, 10 Aug 2018 10:00:00 +0000</pubDate>
+      
+      <guid>https://blog.gitea.io/2018/08/gitea-1.5.0-is-released/</guid>
+      <description>&lt;p&gt;The time has come for another major release! We are happy to present Gitea
+1.5.0 to the world. In this release, we merged
+&lt;a href=&#34;https://github.com/go-gitea/gitea/pulls?utf8=%E2%9C%93&amp;amp;q=is%3Apr+milestone%3A1.5.0+is%3Amerged&#34;&gt;258 pull requests&lt;/a&gt;
+&amp;ndash; just a bit more than last time (236).&lt;/p&gt;
+&lt;p&gt;You can download one of our pre-built binaries from our
+&lt;a href=&#34;https://dl.gitea.io/gitea/1.5.0/&#34;&gt;downloads page&lt;/a&gt; - make sure to select the
+correct platform! For further details on how to install, follow our
+&lt;a href=&#34;https://docs.gitea.io/en-us/install-from-binary/&#34;&gt;installation guide&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;We&amp;rsquo;d like to thank all of our backers on
+&lt;a href=&#34;https://opencollective.com/gitea&#34;&gt;Open Collective&lt;/a&gt;, who are helping us deliver
+a better piece of software.&lt;/p&gt;
+&lt;p&gt;With that out of the way, here&amp;rsquo;s what&amp;rsquo;s new in 1.5.0:&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Release of 1.4.3</title>
+      <link>https://blog.gitea.io/2018/06/release-of-1.4.3/</link>
+      <pubDate>Tue, 26 Jun 2018 09:30:00 -0500</pubDate>
+      
+      <guid>https://blog.gitea.io/2018/06/release-of-1.4.3/</guid>
+      <description>&lt;p&gt;We proudly present the bugfix release of Gitea version 1.4.3. This release contains important
+security fixes so it is highly recommended to update to latest release.
+We have merged &lt;a href=&#34;https://github.com/go-gitea/gitea/milestone/25?closed=1&#34;&gt;9 pull requests&lt;/a&gt; to release this version.
+You can download one of our pre-built binaries from our &lt;a href=&#34;https://dl.gitea.io/gitea/1.4.3/&#34;&gt;downloads page&lt;/a&gt;, you just need to select the correct platform.
+For further details of the installation follow our &lt;a href=&#34;https://docs.gitea.io/en-us/install-from-binary/&#34;&gt;installation guide&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;We would like to say special thanks to those who reported security issues fixed in this release.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/nickolas360&#34;&gt;@nickolas360&lt;/a&gt; &lt;a href=&#34;https://github.com/go-gitea/gitea/pull/4192&#34;&gt;#4192&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/glitch003&#34;&gt;@glitch003&lt;/a&gt; and &lt;a href=&#34;https://github.com/cezar97&#34;&gt;@cezar97&lt;/a&gt; &lt;a href=&#34;https://github.com/go-gitea/gitea/issues/4307&#34;&gt;#4307&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;If you have found a vulnerability in the project, please write privately to &lt;a href=&#34;mailto:security@gitea.io&#34;&gt;security@gitea.io&lt;/a&gt;.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Release of 1.4.2</title>
+      <link>https://blog.gitea.io/2018/06/release-of-1.4.2/</link>
+      <pubDate>Mon, 04 Jun 2018 09:30:00 +0000</pubDate>
+      
+      <guid>https://blog.gitea.io/2018/06/release-of-1.4.2/</guid>
+      <description>&lt;p&gt;It&amp;rsquo;s been a wild and wonderful weekend. Many new users have found Gitea and we are so happy to be able to help you with your self-hosting Git journey. Thank you to all of our backers on &lt;a href=&#34;https://opencollective.com/gitea&#34;&gt;Open Collective&lt;/a&gt;, you are helping us deliver a better piece of software.&lt;/p&gt;
+&lt;p&gt;We are happy to release version 1.4.2 of Gitea. We have merged &lt;a href=&#34;https://github.com/go-gitea/gitea/milestone/23?closed=1&#34;&gt;13 pull requests&lt;/a&gt; to release version.&lt;/p&gt;
+&lt;p&gt;You can download one of our pre-built binaries from our &lt;a href=&#34;https://dl.gitea.io/gitea/1.4.2/&#34;&gt;downloads page&lt;/a&gt;, you just need to select the correct platform. For further details of the installation follow our &lt;a href=&#34;https://docs.gitea.io/en-us/install-from-binary/&#34;&gt;installation guide&lt;/a&gt;.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Release of 1.4.1</title>
+      <link>https://blog.gitea.io/2018/05/release-of-1.4.1/</link>
+      <pubDate>Thu, 03 May 2018 09:30:00 +0200</pubDate>
+      
+      <guid>https://blog.gitea.io/2018/05/release-of-1.4.1/</guid>
+      <description>&lt;p&gt;We proudly present the bugfix release of Gitea version 1.4.1. This release contains important
+security fixes so it is highly recommended to update to latest release.
+We have merged &lt;a href=&#34;https://github.com/go-gitea/gitea/milestone/22?closed=1&#34;&gt;17 pull requests&lt;/a&gt; to release this version.
+You can download one of our pre-built binaries from our &lt;a href=&#34;https://dl.gitea.io/gitea/1.4.1/&#34;&gt;downloads page&lt;/a&gt;, you just need to select the correct platform. For further details of the installation follow our &lt;a href=&#34;https://docs.gitea.io/en-us/install-from-binary/&#34;&gt;installation guide&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;We would like to say special thanks to those who reported security issues fixed in this release.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/nubenum&#34;&gt;@nubenum&lt;/a&gt; (&lt;a href=&#34;https://github.com/go-gitea/gitea/pull/3778&#34;&gt;#3778&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;Bernd Ziegenbalg (&lt;a href=&#34;https://github.com/go-gitea/gitea/pull/3721&#34;&gt;#3721&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://security.szurek.pl/&#34;&gt;Kacper Szurek&lt;/a&gt; (&lt;a href=&#34;https://github.com/go-gitea/gitea/pull/3871&#34;&gt;#3871&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;shannara (IRC) (&lt;a href=&#34;https://github.com/go-gitea/gitea/pull/3887&#34;&gt;#3887&lt;/a&gt;)&lt;/li&gt;
+&lt;/ul&gt;</description>
+    </item>
+    
+    <item>
+      <title>Gitea 1.4.0 is released</title>
+      <link>https://blog.gitea.io/2018/03/gitea-1.4.0-is-released/</link>
+      <pubDate>Sun, 25 Mar 2018 10:00:00 +0000</pubDate>
+      
+      <guid>https://blog.gitea.io/2018/03/gitea-1.4.0-is-released/</guid>
+      <description>&lt;p&gt;The Gitea 1.4.0 release is done, with a total of &lt;a href=&#34;https://github.com/go-gitea/gitea/pulls?utf8=%E2%9C%93&amp;amp;q=is%3Apr+milestone%3A1.4.0+is%3Amerged&#34;&gt;236 merged pull requests&lt;/a&gt;. We made sure to deliver as many new features as possible in this version—you&amp;rsquo;re going to love it!&lt;/p&gt;
+&lt;p&gt;You can download one of pre-built binaries from our &lt;a href=&#34;https://dl.gitea.io/gitea/1.4.0/&#34;&gt;downloads page&lt;/a&gt;. For further details of the installation follow our &lt;a href=&#34;https://docs.gitea.io/en-us/install-from-binary/&#34;&gt;installation guide&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Starting this release, we&amp;rsquo;ll walk you through the most important changes. We&amp;rsquo;ve got a lot to talk about for Gitea 1.4.0.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Release of 1.3.3</title>
+      <link>https://blog.gitea.io/2018/02/release-of-1.3.3/</link>
+      <pubDate>Mon, 19 Feb 2018 13:30:00 +0200</pubDate>
+      
+      <guid>https://blog.gitea.io/2018/02/release-of-1.3.3/</guid>
+      <description>&lt;p&gt;We proudly present the bugfix release of Gitea version 1.3.3. This release contains important
+security fixes so it is highly recommended to update to latest release.
+We have merged &lt;a href=&#34;https://github.com/go-gitea/gitea/milestone/20?closed=1&#34;&gt;5 pull requests&lt;/a&gt; to release this version.
+You can download one of our pre-built binaries from our &lt;a href=&#34;https://dl.gitea.io/gitea/1.3.3/&#34;&gt;downloads page&lt;/a&gt;, you just need to select the correct platform. For further details of the installation follow our &lt;a href=&#34;https://docs.gitea.io/en-us/install-from-binary/&#34;&gt;installation guide&lt;/a&gt;.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Release of 1.3.2</title>
+      <link>https://blog.gitea.io/2017/12/release-of-1.3.2/</link>
+      <pubDate>Thu, 14 Dec 2017 12:40:00 +0200</pubDate>
+      
+      <guid>https://blog.gitea.io/2017/12/release-of-1.3.2/</guid>
+      <description>&lt;p&gt;We proudly present the bugfix release of Gitea version 1.3.2. We have merged &lt;a href=&#34;https://github.com/go-gitea/gitea/milestone/19?closed=1&#34;&gt;7 pull requests&lt;/a&gt; to release this version. You can download one of our pre-built binaries from our &lt;a href=&#34;https://dl.gitea.io/gitea/1.3.2/&#34;&gt;downloads page&lt;/a&gt;, you just need to select the correct platform. For further details of the installation follow our &lt;a href=&#34;https://docs.gitea.io/en-us/install-from-binary/&#34;&gt;installation guide&lt;/a&gt;.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Release of 1.3.1</title>
+      <link>https://blog.gitea.io/2017/12/release-of-1.3.1/</link>
+      <pubDate>Sat, 09 Dec 2017 23:26:00 +0800</pubDate>
+      
+      <guid>https://blog.gitea.io/2017/12/release-of-1.3.1/</guid>
+      <description>&lt;p&gt;We proudly present the bugfix release of Gitea version 1.3.1. We have merged &lt;a href=&#34;https://github.com/go-gitea/gitea/milestone/18?closed=1&#34;&gt;7 pull requests&lt;/a&gt; to release this version. You can download one of our pre-built binaries from our &lt;a href=&#34;https://dl.gitea.io/gitea/1.3.1/&#34;&gt;downloads page&lt;/a&gt;, you just need to select the correct platform. For further details of the installation follow our &lt;a href=&#34;https://docs.gitea.io/en-us/install-from-binary/&#34;&gt;installation guide&lt;/a&gt;.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Release of 1.3.0</title>
+      <link>https://blog.gitea.io/2017/11/release-of-1.3.0/</link>
+      <pubDate>Wed, 29 Nov 2017 16:21:30 +0200</pubDate>
+      
+      <guid>https://blog.gitea.io/2017/11/release-of-1.3.0/</guid>
+      <description>&lt;p&gt;We proudly present that we have released the fourth big version of Gitea v1.3.0. We have merged &lt;a href=&#34;https://github.com/go-gitea/gitea/milestone/9?closed=1&#34;&gt;314&lt;/a&gt; pull requests to release this version. You can download one of our pre-built binaries from our &lt;a href=&#34;https://dl.gitea.io/gitea/1.3.0/&#34;&gt;downloads page&lt;/a&gt;, you just need to select the correct platform. For further details of the installation follow our &lt;a href=&#34;https://docs.gitea.io/en-us/install-from-binary/&#34;&gt;installation guide&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;There is one breaking change in URL scheme for code tab that is now changed to be less ambiguous while still keeping backwards comaptibility by redirecting old links to new scheme. This release adds new features such as Branch overview page, Activity page with latest issue and pull request stats, Time tracking for issues and pull requests, Option to specify branch when creating issue, Creating new branch from branch selection dropdown, List of all repositories under user settings, Orgmode and external renderer support for file view and readme, More webhooks and also experimantal repository source code search (be warned that it&amp;rsquo;s possible to enable it only for all repositories and it could take as much as 5 times more disk space than repisotries itself). Also there are a lot of bugs fixed in this release cycle. We are working hard already to get next version &lt;a href=&#34;https://github.com/go-gitea/gitea/milestone/14&#34;&gt;v1.4.0&lt;/a&gt; released as soon as possible!&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Release of 1.2.3</title>
+      <link>https://blog.gitea.io/2017/11/release-of-1.2.3/</link>
+      <pubDate>Fri, 03 Nov 2017 18:45:00 +0100</pubDate>
+      
+      <guid>https://blog.gitea.io/2017/11/release-of-1.2.3/</guid>
+      <description>&lt;p&gt;We proudly present the bugfix release of Gitea version 1.2.3. We have merged &lt;a href=&#34;https://github.com/go-gitea/gitea/milestone/17?closed=1&#34;&gt;3 pull requests&lt;/a&gt; to release this version. You can download one of our pre-built binaries from our &lt;a href=&#34;https://dl.gitea.io/gitea/1.2.3/&#34;&gt;downloads page&lt;/a&gt;, you just need to select the correct platform. For further details of the installation follow our &lt;a href=&#34;https://docs.gitea.io/en-us/install-from-binary/&#34;&gt;installation guide&lt;/a&gt;.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Release of 1.2.2</title>
+      <link>https://blog.gitea.io/2017/10/release-of-1.2.2/</link>
+      <pubDate>Thu, 26 Oct 2017 17:21:30 +0200</pubDate>
+      
+      <guid>https://blog.gitea.io/2017/10/release-of-1.2.2/</guid>
+      <description>&lt;p&gt;We proudly present the bugfix release of Gitea version 1.2.2. We have merged &lt;a href=&#34;https://github.com/go-gitea/gitea/milestone/16?closed=1&#34;&gt;5 pull requests&lt;/a&gt; to release this version. You can download one of our pre-built binaries from our &lt;a href=&#34;https://dl.gitea.io/gitea/1.2.2/&#34;&gt;downloads page&lt;/a&gt;, you just need to select the correct platform. For further details of the installation follow our &lt;a href=&#34;https://docs.gitea.io/en-us/install-from-binary/&#34;&gt;installation guide&lt;/a&gt;.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Release of 1.2.1</title>
+      <link>https://blog.gitea.io/2017/10/release-of-1.2.1/</link>
+      <pubDate>Mon, 16 Oct 2017 17:22:30 +0100</pubDate>
+      
+      <guid>https://blog.gitea.io/2017/10/release-of-1.2.1/</guid>
+      <description>&lt;p&gt;We proudly present the bugfix release of Gitea version 1.2.1. We have merged &lt;a href=&#34;https://github.com/go-gitea/gitea/milestone/15?closed=1&#34;&gt;5&lt;/a&gt; pull requests to release this version. You can download one of our pre-built binaries from our &lt;a href=&#34;https://dl.gitea.io/gitea/1.2.1/&#34;&gt;downloads page&lt;/a&gt;, you just need to select the correct platform. For further details of the installation follow our &lt;a href=&#34;https://docs.gitea.io/en-us/install-from-binary/&#34;&gt;installation guide&lt;/a&gt;.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Release of 1.2.0</title>
+      <link>https://blog.gitea.io/2017/10/release-of-1.2.0/</link>
+      <pubDate>Thu, 12 Oct 2017 16:21:30 +0800</pubDate>
+      
+      <guid>https://blog.gitea.io/2017/10/release-of-1.2.0/</guid>
+      <description>&lt;p&gt;We proudly present that we have released the third big version of Gitea v1.2.0. We have merged &lt;a href=&#34;https://github.com/go-gitea/gitea/milestone/3?closed=1&#34;&gt;676&lt;/a&gt; pull requests to release this version. You can download one of our pre-built binaries from our &lt;a href=&#34;https://dl.gitea.io/gitea/1.2.0/&#34;&gt;downloads page&lt;/a&gt;, you just need to select the correct platform. For further details of the installation follow our &lt;a href=&#34;https://docs.gitea.io/en-us/install-from-binary/&#34;&gt;installation guide&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;This version was delayed for six months but that will not change our release cycle plan. After voting by community we have changed the Logo design. Many new features added like Status API and showing it in commit tab, integration with 20+ OAuth2 providers and support for OpenID login, Team Units, GPG signed commit validation, Batch operations on issues. Also there are more than 200 bugs fixed in this release cycle and that is also the reason why release was delayed so much. We are working hard to get next version &lt;a href=&#34;https://github.com/go-gitea/gitea/milestone/9&#34;&gt;v1.3.0&lt;/a&gt; released as soon as possible!&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Release of 1.1.4</title>
+      <link>https://blog.gitea.io/2017/09/release-of-1.1.4/</link>
+      <pubDate>Tue, 05 Sep 2017 11:53:30 +0800</pubDate>
+      
+      <guid>https://blog.gitea.io/2017/09/release-of-1.1.4/</guid>
+      <description>&lt;p&gt;We proudly present the bugfix release of Gitea version 1.1.4. We have merged &lt;a href=&#34;https://github.com/go-gitea/gitea/milestone/13?closed=1&#34;&gt;6&lt;/a&gt; pull requests to release this version of Gitea. You can download one of our pre-built binaries from our &lt;a href=&#34;https://dl.gitea.io/gitea/1.1.4/&#34;&gt;downloads page&lt;/a&gt;, you just need to select the correct platform. For further details of the installation follow our &lt;a href=&#34;https://docs.gitea.io/en-us/install-from-binary/&#34;&gt;installation guide&lt;/a&gt;.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Release of 1.1.3</title>
+      <link>https://blog.gitea.io/2017/08/release-of-1.1.3/</link>
+      <pubDate>Mon, 07 Aug 2017 10:53:30 +0800</pubDate>
+      
+      <guid>https://blog.gitea.io/2017/08/release-of-1.1.3/</guid>
+      <description>&lt;p&gt;We proudly present the bugfix release of Gitea version 1.1.3. We have merged &lt;a href=&#34;https://github.com/go-gitea/gitea/milestone/12?closed=1&#34;&gt;6&lt;/a&gt; pull requests to release this version of Gitea. You can download one of our pre-built binaries from our &lt;a href=&#34;https://dl.gitea.io/gitea/1.1.3/&#34;&gt;downloads page&lt;/a&gt;, you just need to select the correct platform. For further details of the installation follow our &lt;a href=&#34;https://docs.gitea.io/en-us/install-from-binary/&#34;&gt;installation guide&lt;/a&gt;.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Release of 1.1.2</title>
+      <link>https://blog.gitea.io/2017/06/release-of-1.1.2/</link>
+      <pubDate>Mon, 12 Jun 2017 17:21:30 +0800</pubDate>
+      
+      <guid>https://blog.gitea.io/2017/06/release-of-1.1.2/</guid>
+      <description>&lt;p&gt;We proudly present the bugfix release of Gitea version 1.1.2. We have merged &lt;a href=&#34;https://github.com/go-gitea/gitea/milestone/11?closed=1&#34;&gt;5&lt;/a&gt; pull requests to release this version of Gitea. You can download one of our pre-built binaries from our &lt;a href=&#34;https://dl.gitea.io/gitea/1.1.2/&#34;&gt;downloads page&lt;/a&gt;, you just need to select the correct platform. For further details of the installation follow our &lt;a href=&#34;https://docs.gitea.io/en-us/install-from-binary/&#34;&gt;installation guide&lt;/a&gt;.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Release of 1.1.1</title>
+      <link>https://blog.gitea.io/2017/05/release-of-1.1.1/</link>
+      <pubDate>Thu, 04 May 2017 17:20:00 +0200</pubDate>
+      
+      <guid>https://blog.gitea.io/2017/05/release-of-1.1.1/</guid>
+      <description>&lt;p&gt;We proudly present the bugfix release of Gitea version 1.1.1. We have merged &lt;a href=&#34;https://github.com/go-gitea/gitea/milestone/10?closed=1&#34;&gt;10&lt;/a&gt; pull requests to release this version of Gitea. You can download one of our pre-built binaries from our &lt;a href=&#34;https://dl.gitea.io/gitea/1.1.1/&#34;&gt;downloads page&lt;/a&gt;, you just need to select the correct platform. For further details of the installation follow our &lt;a href=&#34;https://docs.gitea.io/en-us/install-from-binary/&#34;&gt;installation guide&lt;/a&gt;.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Release of 1.1.0</title>
+      <link>https://blog.gitea.io/2017/03/release-of-1.1.0/</link>
+      <pubDate>Thu, 09 Mar 2017 20:15:00 +0100</pubDate>
+      
+      <guid>https://blog.gitea.io/2017/03/release-of-1.1.0/</guid>
+      <description>&lt;p&gt;We proudly present the release of Gitea version 1.1.0. We have closed &lt;a href=&#34;https://github.com/go-gitea/gitea/issues?q=is%3Aissue+is%3Aclosed+milestone%3A1.1.0&#34;&gt;126&lt;/a&gt; issues and we also merged &lt;a href=&#34;https://github.com/go-gitea/gitea/pulls?utf8=%E2%9C%93&amp;amp;q=is%3Apr%20is%3Amerged%20milestone%3A1.1.0&#34;&gt;348&lt;/a&gt; pull requests to release this version of Gitea. You can download one of our pre-built binaries from our &lt;a href=&#34;https://dl.gitea.io/gitea/1.1.0/&#34;&gt;downloads page&lt;/a&gt;, you just need to select the correct platform. For further details of the installation follow our &lt;a href=&#34;https://docs.gitea.io/en-us/install-from-binary/&#34;&gt;installation guide&lt;/a&gt;.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Release of 1.0.2</title>
+      <link>https://blog.gitea.io/2017/02/release-of-1.0.2/</link>
+      <pubDate>Wed, 22 Feb 2017 13:57:00 +0800</pubDate>
+      
+      <guid>https://blog.gitea.io/2017/02/release-of-1.0.2/</guid>
+      <description>&lt;p&gt;We proudly present the bugfix release of Gitea version 1.0.2. We have merged &lt;a href=&#34;https://github.com/go-gitea/gitea/pulls?utf8=%E2%9C%93&amp;amp;q=is%3Apr%20is%3Amerged%20milestone%3A1.0.2&#34;&gt;9&lt;/a&gt; pull requests to release this version of Gitea. You can download one of our pre-built binaries from our &lt;a href=&#34;https://dl.gitea.io/gitea/1.0.2/&#34;&gt;downloads page&lt;/a&gt;, you just need to select the correct platform. For further details of the installation follow our &lt;a href=&#34;https://docs.gitea.io/en-us/install-from-binary/&#34;&gt;installation guide&lt;/a&gt;.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Release of 1.0.1</title>
+      <link>https://blog.gitea.io/2017/01/release-of-1.0.1/</link>
+      <pubDate>Thu, 05 Jan 2017 15:00:00 +0200</pubDate>
+      
+      <guid>https://blog.gitea.io/2017/01/release-of-1.0.1/</guid>
+      <description>&lt;p&gt;We proudly present the bugfix release of Gitea version 1.0.1. We have merged &lt;a href=&#34;https://github.com/go-gitea/gitea/pulls?utf8=%E2%9C%93&amp;amp;q=is%3Apr%20is%3Amerged%20milestone%3A1.0.1&#34;&gt;9&lt;/a&gt; pull requests to release this version of Gitea. You can download one of our pre-built binaries from our &lt;a href=&#34;https://dl.gitea.io/gitea/1.0.1/&#34;&gt;downloads page&lt;/a&gt;, you just need to select the correct platform. For further details of the installation follow our &lt;a href=&#34;https://docs.gitea.io/en-us/install-from-binary/&#34;&gt;installation guide&lt;/a&gt;.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Release of 1.0.0</title>
+      <link>https://blog.gitea.io/2016/12/release-of-1.0.0/</link>
+      <pubDate>Fri, 23 Dec 2016 08:00:00 +0200</pubDate>
+      
+      <guid>https://blog.gitea.io/2016/12/release-of-1.0.0/</guid>
+      <description>&lt;p&gt;We proudly present the release of Gitea version 1.0.0. We have closed &lt;a href=&#34;https://github.com/go-gitea/gitea/issues?q=is%3Aissue+is%3Aclosed+milestone%3A1.0.0&#34;&gt;44&lt;/a&gt; issues and we also merged &lt;a href=&#34;https://github.com/go-gitea/gitea/pulls?utf8=%E2%9C%93&amp;amp;q=is%3Apr%20is%3Amerged%20milestone%3A1.0.0&#34;&gt;238&lt;/a&gt; pull requests to release this version of Gitea. You can download one of our pre-built binaries from our &lt;a href=&#34;https://dl.gitea.io/gitea/1.0.0/&#34;&gt;downloads page&lt;/a&gt;, you just need to select the correct platform. For further details of the installation follow our &lt;a href=&#34;https://docs.gitea.io/en-us/install-from-binary/&#34;&gt;installation guide&lt;/a&gt;, if you want to upgrade from Gogs follow our &lt;a href=&#34;https://docs.gitea.io/en-us/upgrade-from-gogs/&#34;&gt;migration guide&lt;/a&gt;.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Welcome to Gitea</title>
+      <link>https://blog.gitea.io/2016/12/welcome-to-gitea/</link>
+      <pubDate>Thu, 08 Dec 2016 11:00:00 +0200</pubDate>
+      
+      <guid>https://blog.gitea.io/2016/12/welcome-to-gitea/</guid>
+      <description>&lt;p&gt;Gitea is a community fork of the popular self-hosted Git service Gogs. We&amp;rsquo;re a growing group of former Gogs users and contributors who found the single-maintainer management model of Gogs frustrating and thus decided to make an effort to build a more open and faster development model.&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>
