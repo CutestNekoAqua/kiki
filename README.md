@@ -1,7 +1,5 @@
 # Kiki
 
-This project is still in a WIP state.
-
 Basic configuration:
 
 ```
@@ -13,8 +11,6 @@ database:
   password: kiki
   host: localhost
   port: 5432
-misskey:
-  baseurl: https://slippy.xyz
 ```
 
 
