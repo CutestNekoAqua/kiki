@@ -147,7 +147,7 @@ test:
 
 .PHONY: lint
 lint:
-	@$(GOLANGCI_LINT) run --enable-all
+	$(GOLANGCI_LINT) run --enable-all --timeout 3m --verbose
 
 lint-new:
-	@$(GOLANGCI_LINT) run --enable-all --new
+	$(GOLANGCI_LINT) run --enable-all --new --timeout 3m --verbose
