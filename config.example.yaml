@@ -5,5 +5,3 @@ database:
   password: kiki
   host: localhost
   port: 31932
-misskey:
-  baseurl: https://slippy.xyz

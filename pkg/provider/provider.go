@@ -1,9 +1,5 @@
 package provider
 
-import (
-	"log"
-)
-
 // Interface is a common interface for providers like RSS.
 type Interface interface {
 	Name() string
@@ -13,14 +9,12 @@ type Interface interface {
 // NewProviderByName creates a new Provider based on its name.
 func NewProviderByName(name string) Interface {
 	switch name {
-	case "atom":
+	case AtomName:
 		return &Atom{}
-	case "rss":
+	case RSSName:
 		return &RSS{}
-	case "rdf":
+	case RDFName:
 		return &RDF{}
-	default:
-		log.Fatalf("Unknown Provider: %s\n", name)
 	}
 
 	return nil

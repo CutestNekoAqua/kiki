@@ -1,23 +1,23 @@
 package feed
 
 import (
-	"log"
-
 	"gitea.code-infection.com/efertone/kiki/pkg/database"
 	"gitea.code-infection.com/efertone/kiki/pkg/model"
 )
 
 // Add a new Feed to an Account.
-func Add(name, user, url, provider string) {
+func Add(name, user, url, provider string) error {
 	db := database.NewDatabase()
 	defer db.Close()
 
 	var count int
 
-	db.Connection().Find(&model.Account{Name: user}).Count(&count)
+	db.Connection().Model(&model.Account{}).Where("name = ?", user).Count(&count)
 
 	if count < 1 {
-		log.Fatalln("User does not exist")
+		return UserDoesNotExistError{
+			Name: user,
+		}
 	}
 
 	db.Connection().Create(&model.Feed{
@@ -26,6 +26,8 @@ func Add(name, user, url, provider string) {
 		URL:      url,
 		Provider: provider,
 	})
+
+	return nil
 }
 
 // All returns all available Feeds.

@@ -55,9 +55,9 @@ type BadReadCloser struct {
 }
 
 func (r BadReadCloser) Read(c []byte) (int, error) {
-	return 0, errors.New("Read error")
+	return 0, errors.New("Read error") //nolint:goerr113
 }
 
 func (r BadReadCloser) Close() error {
-	return errors.New("Close error")
+	return errors.New("Close error") //nolint:goerr113
 }

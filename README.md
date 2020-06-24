@@ -36,7 +36,7 @@ Optionally, you can specify with `--config` parameter.
 ## Add feed to a user
 
 ```
-./kiki add-feed --name="Happy News" --url="https://i-am-happy/newletter.atom" --user="happy_bot"
+./kiki add-feed --name="Happy News" --url="https://i-am-happy/newletter.atom" --user="happy_bot" --provider="atom"
 ```
 
 ## Fetch

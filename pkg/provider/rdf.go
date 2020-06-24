@@ -8,12 +8,17 @@ import (
 	"jaytaylor.com/html2text"
 )
 
+const (
+	// RDFName is the name of the Atom provider.
+	RDFName = "rdf"
+)
+
 // RDF provider.
 type RDF struct{}
 
 // Name returns with the name of the provider.
 func (a RDF) Name() string {
-	return "rdf"
+	return RDFName
 }
 
 // Parse tries to parse all entries from an RDF []byte content.

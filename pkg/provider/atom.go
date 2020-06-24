@@ -8,13 +8,18 @@ import (
 	"jaytaylor.com/html2text"
 )
 
+const (
+	// AtomName is the name of the Atom provider.
+	AtomName = "atom"
+)
+
 // Atom provider.
 type Atom struct {
 }
 
 // Name returns with the name of the provider.
 func (a Atom) Name() string {
-	return "atom"
+	return AtomName
 }
 
 // Parse tries to parse all entries from an Atom []byte content.

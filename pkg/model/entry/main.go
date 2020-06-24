@@ -32,3 +32,19 @@ func NextPending(feed *model.Feed) *model.Entry {
 
 	return &entry
 }
+
+// Exists checks if a given Entry already exists in the database or not.
+func Exists(entry *model.Entry) bool {
+	var count int
+
+	db := database.NewDatabase()
+	defer db.Close()
+
+	db.Connection().
+		Model(&model.Entry{}).
+		Where(&model.Entry{FeedID: entry.FeedID, EntryID: entry.EntryID}).
+		Or(&model.Entry{FeedID: entry.FeedID, Link: entry.Link}).
+		Count(&count)
+
+	return count > 0
+}

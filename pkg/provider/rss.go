@@ -8,12 +8,17 @@ import (
 	"jaytaylor.com/html2text"
 )
 
+const (
+	// RSSName is the name of the Atom provider.
+	RSSName = "rss"
+)
+
 // RSS provider.
 type RSS struct{}
 
 // Name returns with the name of the provider.
 func (a RSS) Name() string {
-	return "rss"
+	return RSSName
 }
 
 // Parse tries to parse all entries from an RSS []byte content.

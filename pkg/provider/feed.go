@@ -25,11 +25,11 @@ func XMLFeedTypeOf(content []byte) (string, error) {
 
 	switch strings.ToLower(feedHeader.XMLName.Local) {
 	case "feed":
-		return "atom", nil
+		return AtomName, nil
 	case "rss":
-		return "rss", nil
+		return RSSName, nil
 	case "rdf":
-		return "rdf", nil
+		return RDFName, nil
 	}
 
 	return "", UnknownXMLFeedType{feedHeader.XMLName.Local}

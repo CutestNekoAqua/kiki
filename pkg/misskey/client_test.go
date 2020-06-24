@@ -47,7 +47,7 @@ func TestNewClient_NormalRequestContent(t *testing.T) {
 func TestNewClient_RequestError(t *testing.T) {
 	mockClient := NewMockHTTPClient()
 	mockClient.MockRequest("/api/notes/create", func(request *http.Request) (*http.Response, error) {
-		return NewMockResponse(http.StatusNotImplemented, []byte{}, errors.New("bad"))
+		return NewMockResponse(http.StatusNotImplemented, []byte{}, errors.New("bad")) //nolint:goerr113
 	})
 
 	client := misskey.NewClient("https://localhost", "thisistoken")
@@ -61,7 +61,7 @@ func TestNewClient_RequestError(t *testing.T) {
 
 	expected := misskey.RequestError{
 		Message: misskey.ResponseReadError,
-		Origin:  errors.New("bad"),
+		Origin:  errors.New("bad"), //nolint:goerr113
 	}
 	if err.Error() != expected.Error() {
 		t.Errorf("Expected error = %s, got = %s", expected.Error(), err.Error())
@@ -88,7 +88,7 @@ func TestNewClient_ReadError(t *testing.T) {
 
 	expected := misskey.RequestError{
 		Message: misskey.ResponseReadBodyError,
-		Origin:  errors.New("Read error"),
+		Origin:  errors.New("Read error"), //nolint:goerr113
 	}
 	if err.Error() != expected.Error() {
 		t.Errorf("Expected error = %s, got = %s", expected.Error(), err.Error())
@@ -113,7 +113,7 @@ func TestNewClient_ErrorResponseWrapper_Error(t *testing.T) {
 
 	expected := misskey.RequestError{
 		Message: misskey.ErrorResponseParseError,
-		Origin:  errors.New("invalid character 's' looking for beginning of value"),
+		Origin:  errors.New("invalid character 's' looking for beginning of value"), //nolint:goerr113
 	}
 	if err.Error() != expected.Error() {
 		t.Errorf("Expected error = %s, got = %s", expected.Error(), err.Error())
@@ -138,7 +138,7 @@ func TestNewClient_ErrorResponseParse_Error(t *testing.T) {
 
 	expected := misskey.RequestError{
 		Message: misskey.ErrorResponseParseError,
-		Origin:  errors.New("json: cannot unmarshal bool into Go value of type misskey.ErrorResponse"),
+		Origin:  errors.New("json: cannot unmarshal bool into Go value of type misskey.ErrorResponse"), //nolint:goerr113
 	}
 	if err.Error() != expected.Error() {
 		t.Errorf("Expected error = %s, got = %s", expected.Error(), err.Error())

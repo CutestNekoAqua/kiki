@@ -7,7 +7,7 @@ import (
 
 // Download fetches the content of an URI and returns with a parsed []mode.Entry.
 func Download(url string) ([]byte, error) {
-	resp, err := http.Get(url)
+	resp, err := http.Get(url) //nolint:gosec
 	if err != nil {
 		return nil, err
 	}

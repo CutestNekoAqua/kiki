@@ -3,7 +3,10 @@ package command
 import (
 	"log"
 
+	"gitea.code-infection.com/efertone/kiki/pkg/database"
+	"gitea.code-infection.com/efertone/kiki/pkg/model/entry"
 	"gitea.code-infection.com/efertone/kiki/pkg/model/feed"
+	"gitea.code-infection.com/efertone/kiki/pkg/provider"
 	"github.com/spf13/cobra"
 )
 
@@ -13,45 +16,40 @@ func Fetch() *cobra.Command {
 		Use:   "fetch",
 		Short: "Fetch all Feed contents",
 		Run: func(cmd *cobra.Command, args []string) {
+			db := database.NewDatabase()
+			defer db.Close()
+
 			for _, f := range feed.All() {
-				log.Println(f)
-				// feed.Get(f)
+				content, err := provider.Download(f.URL)
+				if err != nil {
+					log.Printf("[Fetch] Error: %s\n", err)
+					continue
+				}
+
+				handler := provider.NewProviderByName(f.Provider)
+				if handler == nil {
+					log.Printf(
+						"[Fetch] '%s' Provider not found for '%s'\n",
+						f.Provider,
+						f.Name,
+					)
+					continue
+				}
+
+				entries := handler.Parse(content)
+				for i := len(entries) - 1; i >= 0; i-- {
+					data := entries[i].ToModel()
+					data.FeedID = f.ID
+
+					if entry.Exists(data) {
+						continue
+					}
+
+					db.Connection().Create(data)
+				}
 			}
 		},
 	}
 
 	return cmd
 }
-
-/*
-// Get fetches one Feed and store results in the database.
-func Get(feed *model.Feed) {
-		entries, err := Download(feed)
-		if err != nil {
-			log.Printf("[%s] Error: %s\n", feed.Name, err)
-			return
-		}
-
-		db := database.NewDatabase()
-		defer db.Close()
-
-		for i := len(entries) - 1; i >= 0; i-- {
-			var (
-				entry = entries[i]
-				count int
-			)
-
-			db.Connection().
-				Model(&model.Entry{}).
-				Where(&model.Entry{FeedID: entry.FeedID, EntryID: entry.EntryID}).
-				Or(&model.Entry{FeedID: entry.FeedID, Link: entry.Link}).
-				Count(&count)
-
-			if count > 0 {
-				continue
-			}
-
-			db.Connection().Create(entry)
-		}
-	}
-*/

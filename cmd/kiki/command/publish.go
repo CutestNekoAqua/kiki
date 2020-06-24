@@ -19,6 +19,10 @@ func Publish() *cobra.Command {
 		Run: func(cmd *cobra.Command, args []string) {
 			for _, acc := range account.All() {
 				prov := publisher.NewTokenPublisherByName(acc.Publisher, acc.BaseURL, acc.APIToken)
+				if prov == nil {
+					log.Fatalf("Unknown Publisher: %s\n", acc.Publisher)
+					continue
+				}
 
 				for _, f := range feed.AllFor(acc) {
 					next := entry.NextPending(f)
