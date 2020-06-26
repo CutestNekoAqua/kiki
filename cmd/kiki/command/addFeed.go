@@ -1,7 +1,7 @@
 package command
 
 import (
-	"log"
+	"fmt"
 
 	"gitea.code-infection.com/efertone/kiki/pkg/model/feed"
 	"gitea.code-infection.com/efertone/kiki/pkg/provider"
@@ -24,26 +24,26 @@ func AddFeed() *cobra.Command {
 
 				content, err := provider.Download(url)
 				if err != nil {
-					log.Printf("Error: %s\n", err)
+					fmt.Fprintf(cmd.OutOrStderr(), "Error: %s\n", err)
 					return
 				}
 
 				p, err = provider.XMLFeedTypeOf(content)
 				if err != nil {
-					log.Printf("Error: %s\n", err)
+					fmt.Fprintf(cmd.OutOrStderr(), "Error: %s\n", err)
 					return
 				}
 
-				log.Printf("Match found: xml -> %s", p)
+				fmt.Fprintf(cmd.OutOrStdout(), "Match found: xml -> %s\n", p)
 			}
 
 			if provider.NewProviderByName(p) == nil {
-				log.Printf("Unknown provider: %s\n", p)
+				fmt.Fprintf(cmd.OutOrStderr(), "Unknown provider: %s\n", p)
 			}
 
 			err := feed.Add(name, user, url, p)
 			if err != nil {
-				log.Fatalln(err)
+				fmt.Fprintln(cmd.OutOrStderr(), err)
 			}
 		},
 	}

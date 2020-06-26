@@ -2,7 +2,6 @@ package command
 
 import (
 	"fmt"
-	"log"
 
 	"gitea.code-infection.com/efertone/kiki/pkg/model/account"
 	"gitea.code-infection.com/efertone/kiki/pkg/model/entry"
@@ -20,7 +19,7 @@ func Publish() *cobra.Command {
 			for _, acc := range account.All() {
 				prov := publisher.NewTokenPublisherByName(acc.Publisher, acc.BaseURL, acc.APIToken)
 				if prov == nil {
-					log.Fatalf("Unknown Publisher: %s\n", acc.Publisher)
+					fmt.Fprintf(cmd.OutOrStderr(), "Unknown Publisher: %s\n", acc.Publisher)
 					continue
 				}
 
@@ -34,7 +33,7 @@ func Publish() *cobra.Command {
 						entry.MarkAsPosted(next)
 						continue
 					}
-					log.Printf("[%s] %s\n", prov.Name(), err.Error())
+					fmt.Fprintf(cmd.OutOrStdout(), "[%s] %s\n", prov.Name(), err.Error())
 				}
 			}
 		},

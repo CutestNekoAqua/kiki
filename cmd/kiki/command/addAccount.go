@@ -1,7 +1,7 @@
 package command
 
 import (
-	"log"
+	"fmt"
 
 	"gitea.code-infection.com/efertone/kiki/pkg/model/account"
 	"github.com/spf13/cobra"
@@ -20,7 +20,7 @@ func AddAccount() *cobra.Command {
 
 			err := account.Add(name, token, publisher, baseURL)
 			if err != nil {
-				log.Fatalln(err)
+				fmt.Fprintln(cmd.OutOrStderr(), err)
 			}
 		},
 	}

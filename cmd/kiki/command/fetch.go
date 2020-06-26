@@ -1,7 +1,7 @@
 package command
 
 import (
-	"log"
+	"fmt"
 
 	"gitea.code-infection.com/efertone/kiki/pkg/database"
 	"gitea.code-infection.com/efertone/kiki/pkg/model/entry"
@@ -22,13 +22,14 @@ func Fetch() *cobra.Command {
 			for _, f := range feed.All() {
 				content, err := provider.Download(f.URL)
 				if err != nil {
-					log.Printf("[Fetch] Error: %s\n", err)
+					fmt.Fprintf(cmd.OutOrStderr(), "[Fetch] Error: %s\n", err)
 					continue
 				}
 
 				handler := provider.NewProviderByName(f.Provider)
 				if handler == nil {
-					log.Printf(
+					fmt.Fprintf(
+						cmd.OutOrStderr(),
 						"[Fetch] '%s' Provider not found for '%s'\n",
 						f.Provider,
 						f.Name,
