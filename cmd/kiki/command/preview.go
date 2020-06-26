@@ -42,7 +42,7 @@ func PreviewFetch() *cobra.Command {
 					return
 				}
 
-				fmt.Fprintf(cmd.OutOrStdout(), "Match found: xml -> %s", p)
+				fmt.Fprintf(cmd.OutOrStdout(), "Match found: xml -> %s\n", p)
 			}
 
 			handler := provider.NewProviderByName(p)
