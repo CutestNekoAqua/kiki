@@ -32,6 +32,7 @@ func (d *Database) Migrate() {
 		&model.Account{},
 		&model.Feed{},
 		&model.Entry{},
+		&model.HashTag{},
 	)
 	d.Close()
 }
