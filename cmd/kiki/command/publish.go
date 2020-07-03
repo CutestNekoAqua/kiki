@@ -2,6 +2,7 @@ package command
 
 import (
 	"fmt"
+	"strings"
 
 	"gitea.code-infection.com/efertone/kiki/pkg/model/account"
 	"gitea.code-infection.com/efertone/kiki/pkg/model/entry"
@@ -24,11 +25,30 @@ func Publish() *cobra.Command {
 				}
 
 				for _, f := range feed.AllFor(acc) {
+					tags := feed.PrefixedHashTagValuesFor(f)
+
 					next := entry.NextPending(f)
 					if next == nil {
 						continue
 					}
-					err := prov.Publish(fmt.Sprintf("**%s**\n\n%s\n\n%s", next.Title, next.Excerpt(), next.Link))
+
+					content := ""
+					if len(tags) > 0 {
+						content = fmt.Sprintf(
+							"**%s**\n\n%s\n\n%s\n\n%s",
+							next.Title, next.Excerpt(),
+							next.Link,
+							strings.Join(tags, " "),
+						)
+					} else {
+						content = fmt.Sprintf(
+							"**%s**\n\n%s\n\n%s",
+							next.Title, next.Excerpt(),
+							next.Link,
+						)
+					}
+
+					err := prov.Publish(content)
 					if err == nil {
 						entry.MarkAsPosted(next)
 						continue

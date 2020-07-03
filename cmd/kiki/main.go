@@ -34,9 +34,12 @@ func RootCommand() *cobra.Command {
 	cmd.AddCommand(command.Version())
 	cmd.AddCommand(command.AddAccount())
 	cmd.AddCommand(command.AddFeed())
+	cmd.AddCommand(command.AddHashTag())
 	cmd.AddCommand(command.Fetch())
 	cmd.AddCommand(command.Preview())
 	cmd.AddCommand(command.Publish())
+	cmd.AddCommand(command.ListFeeds())
+	cmd.AddCommand(command.ListAccounts())
 
 	cobra.OnInitialize(initConfig)
 

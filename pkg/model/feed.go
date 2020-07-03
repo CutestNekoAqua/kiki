@@ -11,4 +11,5 @@ type Feed struct {
 	User     string
 	URL      string
 	Provider string
+	HashTags []HashTag
 }
